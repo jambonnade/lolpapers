@@ -1,15 +1,10 @@
 package de.jambonna.lolpapers.ci.webdriver;
 
-import com.google.gson.Gson;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +21,6 @@ public class WebdriverTestAbstract {
     private static final Logger logger = LoggerFactory.getLogger(WebdriverTestAbstract.class);
     
 
-//    private PhantomJSDriver mainDriver;
     private Path workingDir;
     
     private boolean withDevHeader;
@@ -108,16 +102,9 @@ public class WebdriverTestAbstract {
     public void initBrowserForLolpapers(PhantomJSDriver driver) {
 //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(1000, 600));
-//        setHeader(driver, "Accept-Language", "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7");
         logger.debug("Browser options set for Lolpapers");
     }
 
-//    public PhantomJSDriver getMainDriver() {
-//        if (mainDriver == null) {
-//            mainDriver = createPhantomJSDriver();
-//        }
-//        return mainDriver;
-//    }
     
     public String getCurrentRelUrl(WebDriver driver) {
         String baseUrl = getAppBaseUrl();
@@ -128,17 +115,6 @@ public class WebdriverTestAbstract {
         return url.substring(baseUrl.length());
     }
     
-//    public void setHeader(PhantomJSDriver driver, String name, String value) {
-//        if (value != null) {
-//            driver.executePhantomJS("page.customHeaders['" + name + "'] = '" + value + "';");
-//        } else {
-//            driver.executePhantomJS("del page.customHeaders['" + name + "'];");
-//        }
-//    }
-    
-//    public Path getScreenshotsDir() {
-//        return getWorkingDir().resolve("screens");
-//    }
     
     public void wait(int msec) throws InterruptedException {
         Thread.sleep(msec);
@@ -150,10 +126,8 @@ public class WebdriverTestAbstract {
     public void screenshot(TakesScreenshot driver, String name) throws IOException {
         byte[] data = driver.getScreenshotAs(OutputType.BYTES);
 
-//        Path screensDir = getScreenshotsDir();
         Path screenPath = getWorkingDir().resolve(name + ".png");
         logger.info("Saving screenshot {} ...", screenPath);
-//        Files.readAllBytes(screenPath)
         Files.write(screenPath, data);
     }
     

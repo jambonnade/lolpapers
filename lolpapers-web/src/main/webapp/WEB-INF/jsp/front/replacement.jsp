@@ -82,13 +82,6 @@
         </div>
     </div>
 
-                <%-- 
-    <div class="tpl-fill-text-popover-content-with-ex">{text}<br /><span class="ex"><fmt:message key="fillReplacement.fill.popover.ex" />{ex}</span></div>
-    <div class="tpl-fill-text-popover-content-ex">{text}<br /><span class="ex"><fmt:message key="fillReplacement.fill.popover.ex" />{ex}</span></div>
-    
-    <div class="js-fill-text-help-data" style="display: none;">${fn:escapeXml(myPage.getHelpTextJSON('fillReplacement.fill', 'repl'))}</div>
-    --%>
-
     <div class="row">
         <div class="col-md-4 ctx-samples">
             <p class="ctx-samples-title"><fmt:message key="fillReplacement.ctxSamples.title" /></p>
@@ -137,34 +130,6 @@
                         </c:forEach>
                     </div>
 
-                    <%--
-                    <fmt:message key="${baseTrKey}.flagBtnsGroupAriaLabel" var="ariaLabel" />
-                    <div class="btn-group" role="group" aria-label="${fn:escapeXml(ariaLabel)}">
-                        <c:forEach items="${attr.flags}" var="flag">
-                        <c:if test="${!empty myPage.possibleFlags[flag.code]}">
-                        <c:set var="flagLabel" value="${myPage.languageText.getFlagInfo(baseTrKey, st, flag, 'name', 'repl')}" />
-                        <c:set var="flagHelp" value="${myPage.languageText.getFlagInfo(baseTrKey, st, flag, 'help', 'repl')}" />
-                        <c:set var="flagEx" value="${myPage.languageText.getFlagEx(baseTrKey, st, flag, 'repl')}" />
-                        <c:set var="flagPopoverContent" value="${flagHelp}" />
-                        <c:if test="${!empty flagEx}">
-                        <c:if test="${!empty flagPopoverContent}">
-                        <c:set var="flagPopoverContent" value="${flagPopoverContent}<br />" />
-                        </c:if>
-                        <fmt:message key="${baseTrKey}.flagPopoverEx" var="flagPopoverExText" />
-                        <fmt:message key="${baseTrKey}.flagPopoverExSep" var="flagPopoverExSepText" />
-                        <c:set var="flagPopoverContent" value="${flagPopoverContent}${flagPopoverExText}" />
-                        <c:forEach var="curFlagEx" items="${flagEx}" varStatus="vs">
-                        <c:set var="flagPopoverContent" value="${flagPopoverContent}${!vs.first ? flagPopoverExSepText : ''} <u>${curFlagEx}</u>" />
-                        </c:forEach>
-                        </c:if>
-                        <button type="button" class="btn btn-default sdef-flag" data-flag="${flag.code}"
-                                data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="${fn:escapeXml(flagPopoverContent)}">
-                            ${flagLabel}
-                        </button>
-                        </c:if>
-                        </c:forEach>
-                    </div>
-                    --%>
                 </div>
 
                 </c:forEach>
@@ -211,8 +176,6 @@
     </c:if>
     </c:forEach>
     </c:forEach>
-
-    <!--<p class="btns-part"><button class="btn btn-success btn-lg submit-btn" type="submit"><fmt:message key="fillReplacement.submit" /></button></p>-->
 
     <div class="js-lang-data" style="display: none;">${fn:escapeXml(myPage.languageJSON)}</div>
 </form>

@@ -9,16 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-/**
- *
- */
 public class BasicStuffTest extends WebdriverTestAbstract {
     private static final Logger logger = LoggerFactory.getLogger(BasicStuffTest.class);
-
-    
-//    @BeforeClass
-//    public static void setUpClass() {
-//    }
     
     @Before
     public void setDefaults() {

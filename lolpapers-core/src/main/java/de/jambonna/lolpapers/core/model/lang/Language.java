@@ -13,7 +13,7 @@ import org.jsoup.nodes.Element;
  * Contains all language-specific code. Not meant to be thread safe
  */
 public interface Language {
-    // Common syntagme type attribute / flaggs
+    // Common syntagme type attribute / flags
     public static final String ATTR_COMMON_PHASE = "phase";
     public static final String FLAG_COMMON_PHASE_DEF = "def";
     public static final String FLAG_COMMON_PHASE_REPL = "repl";
@@ -134,9 +134,7 @@ public interface Language {
      */
     public void alterReplacementText(ReplaceContext ctx);
     
-    
-//    public Element getHTMLSyntagmeMainDescription(SyntagmeDefinitionAbstract sd);
-    
+        
     /**
      * Gets the replacement infos as an HTML list to be presented to the final user,
      * already localized.

@@ -3,8 +3,6 @@ package de.jambonna.lolpapers.ci.webdriver;
 import java.io.IOException;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,10 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-/**
- *
- */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Scenario1Test extends WebdriverTestAbstract {
     private static final Logger logger = LoggerFactory.getLogger(Scenario1Test.class);
 

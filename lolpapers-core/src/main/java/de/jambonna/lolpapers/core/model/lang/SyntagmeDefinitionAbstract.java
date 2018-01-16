@@ -1,7 +1,6 @@
 package de.jambonna.lolpapers.core.model.lang;
 
 import de.jambonna.lolpapers.core.model.UserException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -32,7 +31,6 @@ public abstract class SyntagmeDefinitionAbstract {
     private final Set<String> chosenAttributes;
     private final Set<String> pubChosenFlags;
     private final Set<String> pubChosenAttributes;
-//    private Phase phase;
     protected String logPrefix;
 
 
@@ -483,14 +481,6 @@ public abstract class SyntagmeDefinitionAbstract {
         return sb.toString();
     }
 
-//    public Phase getPhase() {
-//        return phase;
-//    }
-//
-//    public void setPhase(Phase phase) {
-//        this.phase = phase;
-//    }
-//    
     public String serialize() {
         StringBuilder sb = new StringBuilder();
         sb.append(getType().getCode());
@@ -594,8 +584,4 @@ public abstract class SyntagmeDefinitionAbstract {
 
     }
 
-//    public static enum Phase {
-//        DEFINITION,
-//        REPLACEMENT
-//    }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Data returned to the article template javascript editor when saving
  */
 public class ArticleTemplateResponse {
     private String errorCode;

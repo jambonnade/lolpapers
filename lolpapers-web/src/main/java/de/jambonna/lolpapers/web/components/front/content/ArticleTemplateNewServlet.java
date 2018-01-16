@@ -16,9 +16,7 @@ import java.util.Random;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- */
+
 @WebServlet(name = "Article Template New", urlPatterns = { "/internal/article/template/new" })
 public class ArticleTemplateNewServlet extends FrontServletAbstract {
 

@@ -64,13 +64,6 @@ public abstract class ContentTemplate extends ModelAbstract {
     
     @Transient
     private boolean toRemove;
-
-//    @Transient
-//    private boolean baseContentToSave;
-
-//    @Transient
-//    private boolean usersToSave;
-
     
     
     
@@ -165,15 +158,7 @@ public abstract class ContentTemplate extends ModelAbstract {
         return null;
     }
     
-//    public TemplatePlaceholder getPlaceholder(String reference) {
-//        for (TemplatePlaceholder p : placeholders) {
-//            if (reference != null && reference.equals(p.getReference())) {
-//                return p;
-//            }
-//        }
-//        return null;
-//    }
-//    
+
     public void validatePlaceholderReferences() throws UserException {
         Set<String> references = new HashSet<>(placeholders.size());
         for (TemplatePlaceholder p : placeholders) {
@@ -275,20 +260,4 @@ public abstract class ContentTemplate extends ModelAbstract {
     }
     
     
-//    public boolean isBaseContentToSave() {
-//        return baseContentToSave;
-//    }
-//
-//    public void setBaseContentToSave(boolean baseContentToSave) {
-//        this.baseContentToSave = baseContentToSave;
-//    }
-
-//    public boolean isUsersToSave() {
-//        return usersToSave;
-//    }
-//
-//    public void setUsersToSave(boolean usersToSave) {
-//        this.usersToSave = usersToSave;
-//    }
-//    
 }

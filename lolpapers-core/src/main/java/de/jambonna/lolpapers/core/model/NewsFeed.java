@@ -64,13 +64,6 @@ public class NewsFeed {
     @Transient
     private ArticleDownloader articleDownloader;
     
-//    @ManyToMany
-//    @JoinTable(
-//        name = "NewsFeedCategory",
-//        joinColumns = @JoinColumn(name = "newsFeedId"),
-//        inverseJoinColumns = @JoinColumn(name = "categoryId")
-//    )   
-//    private List<Category> categories = new ArrayList<>();
 
     
     public Long getNewsFeedId() {
@@ -205,23 +198,11 @@ public class NewsFeed {
         NewsFeedItem item = new NewsFeedItem();
         item.setNewsFeed(this);
         item.setFromSyndEntry(e);
-//        item.setCreatedAt(new Date());
-//        item.updateUpdatedAt();
         items.add(item);
     }
     
 
     
-//    public static List<NewsFeed> getAllNewsFeed(EntityManager em) {
-//        CriteriaBuilder cb = em.getCriteriaBuilder();
-//        CriteriaQuery<NewsFeed> cq = cb.createQuery(NewsFeed.class);
-//        Root<NewsFeed> nfRoot = cq.from(NewsFeed.class);
-//        cq.select(nfRoot);
-//        TypedQuery<NewsFeed> q = em.createQuery(cq);
-//        List<NewsFeed> nf = q.getResultList();
-//        return nf;
-//    }
-
     public ArticleDownloader getArticleDownloader() {
         if (articleDownloader == null) {
             // Create a specific ArticleDownloader (or set configuration)

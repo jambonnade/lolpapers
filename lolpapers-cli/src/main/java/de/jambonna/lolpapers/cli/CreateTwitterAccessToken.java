@@ -11,9 +11,6 @@ import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
 
-/**
- *
- */
 public class CreateTwitterAccessToken {
 
     

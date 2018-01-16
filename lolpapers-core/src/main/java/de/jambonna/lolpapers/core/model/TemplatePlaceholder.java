@@ -364,39 +364,6 @@ public class TemplatePlaceholder extends ModelAbstract {
         sd.setText(normalizedText);
         replacementText = normalizedText;
     }
-//    public void setReplacement(String text, Collection<String> supDefFlags) {
-//        SyntagmeDefinition sd = createReplacementSD(supDefFlags);
-        
-//        List<String> finalFlags = new ArrayList<>();
-//        
-//        // Copy context flags
-//        Set<String> flagsOn = origSd.getFlagsOn();
-//        for (String flagCode : flagsOn) {
-//            SyntagmeAttribute attr = sd.getAttributeByFlagCode(flagCode);
-//            if (attr.isContext()) {
-//                finalFlags.add(flagCode);
-//            }
-//        }
-//        
-//        // Copy input def flags
-//        for (String flagCode : defFlags) {
-//            SyntagmeAttribute attr = sd.getAttributeByFlagCode(flagCode);
-//            if (!attr.isContext()) {
-//                finalFlags.add(flagCode);
-//            }
-//        }
-        
-//        sd.resetChosenFlags(defFlags);
-//
-//        sd.setText(text);
-//        String normalizedText = sd.getType().getLanguage().normalizeSyntagmeText(sd);
-//        sd.setText(normalizedText);
-//        
-//        replacementSD = sd;
-//        replacementText = normalizedText;
-//        
-//        updateSerializedReplacement();
-//    }
     
     public SyntagmeDefinition getReplacementSD() {
         if (replacementSD == null) {

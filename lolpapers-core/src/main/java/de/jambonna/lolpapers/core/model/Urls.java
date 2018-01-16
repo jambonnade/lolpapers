@@ -84,18 +84,6 @@ public class Urls {
         return url;
     }
     
-//    public String getPubPath(SharedData sd, Website website, String identifier) {
-//        String realIdentifier = getIdentifierInWebsite(identifier, website);
-//        Url url = sd.getUrlForIdentifier(realIdentifier);
-//        if (url == null) {
-//            throw new IllegalArgumentException("Invalid url id : \"" + realIdentifier + "\"");
-//        }
-//        return url.getRequestPath();
-//    }
-//    
-//    public String getUserConnectPubPath(SharedData sd, Website website) {
-//        return getPubPath(sd, website, USER_CONNECT_URL_ID);
-//    }
     
     
     public CharSequence normalizeForPubRequestPath(CharSequence input) {

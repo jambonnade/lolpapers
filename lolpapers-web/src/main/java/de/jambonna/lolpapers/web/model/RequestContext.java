@@ -120,9 +120,6 @@ public class RequestContext {
         return mainDao;
     }
     
-//    public Urls getUrls() {
-//        return getWebApp().getUrls();
-//    }
     
     public String getBaseUrl() {
         if (baseUrl == null) {            

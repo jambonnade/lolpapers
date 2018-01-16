@@ -35,33 +35,7 @@ public class ArticleDownloader {
     
     public CloseableHttpClient getClient() {
         if (client == null) {
-            client = HttpClients.custom()
-//                .setDefaultRequestConfig(globalConfig)
-//                .setDefaultCookieStore(cookieStore)
-//                .addInterceptorLast(new HttpRequestInterceptor() {
-//                    @Override
-//                    public void process(
-//                            final HttpRequest request,
-//                            final HttpContext context) throws HttpException, IOException {
-//                        System.out.println("Request headers...");
-//                        for (Header h : request.getAllHeaders()) {
-//                            System.out.println(h.getName() + "='" + h.getValue() + "'");
-//                        }
-//                        System.out.println();
-//                    }
-//
-//                })
-//                .addInterceptorLast(new HttpResponseInterceptor() {
-//                    @Override
-//                    public void process(HttpResponse response, HttpContext context) throws HttpException, IOException {
-//                        System.out.println("Response headers...");
-//                        for (Header h : response.getAllHeaders()) {
-//                            System.out.println(h.getName() + "='" + h.getValue() + "'");
-//                        }
-//                        System.out.println();
-//                    }
-//                })
-                .build();
+            client = HttpClients.custom().build();
 
         }
         return client;

@@ -14,9 +14,6 @@ public class SyntagmeFlag {
             throw new IllegalArgumentException("No flag code");
         }
         standaloneGeneralLabel = b.getStandaloneGeneralLabel();
-//        if (standaloneGeneralLabel == null) {
-//            throw new IllegalArgumentException("No flag label");
-//        }
         quickCode = b.getQuickCode();
     }
 

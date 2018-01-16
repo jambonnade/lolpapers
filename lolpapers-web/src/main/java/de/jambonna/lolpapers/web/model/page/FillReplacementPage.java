@@ -14,7 +14,6 @@ import java.util.Set;
 public class FillReplacementPage extends Page {
     private TemplatePlaceholder placeholder;
     private LanguageText languageText;
-//    private Map<String, Boolean> possibleFlags;
 
 
     public TemplatePlaceholder getPlaceholder() {
@@ -80,36 +79,11 @@ public class FillReplacementPage extends Page {
     }
 
     
-//    public Map<String, Boolean> getPossibleFlags() {
-//        if (possibleFlags == null) {
-//            Set<String> flagsOn = getPlaceholder().getDefinitionSD().getReplacementDefinition().getFlagsOn();
-//            possibleFlags = new HashMap<>(flagsOn.size());
-//            for (String flag : flagsOn) {
-//                possibleFlags.put(flag, Boolean.TRUE);
-//            }
-//            // Definition only flags always available
-//            for (SyntagmeAttribute attr : getSyntagmeType().getAttributes().values()) {
-//                if (attr.isDefinitionOnly()) {
-//                    for (SyntagmeFlag flag : attr.getFlags()) {
-//                        possibleFlags.put(flag.getCode(), Boolean.TRUE);
-//                    }
-//                }
-//            }
-//        }
-//        return possibleFlags;
-//    }
-//    public String getStrPossibleFlags() {
-//        return String.join(",", getPossibleFlags().keySet());
-//    }
 
     public int getReplacementTextMaxLg() {
         return new TemplatePlaceholder().getReplacementTextMaxLg();
     }
     
-//    public String getReplacementDescriptionHtml() {
-//        return getLanguage().getHTMLSyntagmeMainDescription(
-//                getPlaceholder().getDefinitionSD().getReplacementDefinition()).html();
-//    }
     
     public LanguageText getLanguageText() {
         if (languageText == null) {
@@ -119,34 +93,4 @@ public class FillReplacementPage extends Page {
         return languageText;
     }
 
-//    public String getHelpTextJSON(String baseTrKey, String specialCase) {
-//        Map<String, Object> helpText = new HashMap<>();
-//        
-//        for (SyntagmeType st : getLanguage().getSyntagmeTypes().values()) {
-//            String curBaseKey = "st." + st.getCode();
-//            helpText.put(curBaseKey + ".help", 
-//                    getLanguageText().getTypeInfo(baseTrKey, st, "help", specialCase));
-//            helpText.put(curBaseKey + ".ex", 
-//                    getLanguageText().getTypeEx(baseTrKey, st, specialCase));
-//            
-//            for (SyntagmeAttribute attr : st.getAttributes().values()) {
-//                String attrBaseKey = curBaseKey + ".attr." + attr.getCode();
-//                helpText.put(attrBaseKey + ".help", 
-//                        getLanguageText().getAttrInfo(attrBaseKey, st, attr, "help", specialCase));
-//                
-//                
-//                for (SyntagmeFlag flag : attr.getFlags()) {
-//                    String flagBaseKey = curBaseKey + ".flag." + flag.getCode();
-//                    helpText.put(flagBaseKey + ".help", 
-//                            getLanguageText().getFlagInfo(flagBaseKey, st, flag, "help", specialCase));
-//                    helpText.put(flagBaseKey + ".ex", 
-//                            getLanguageText().getFlagEx(flagBaseKey, st, flag, specialCase));
-//                }
-//            }
-//        }
-//        
-//        GsonBuilder gsonb = new GsonBuilder();
-//        Gson gson = gsonb.create();
-//        return gson.toJson(helpText);
-//    }
 }

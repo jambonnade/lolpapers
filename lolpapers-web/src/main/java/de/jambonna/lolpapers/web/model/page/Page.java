@@ -100,10 +100,6 @@ public class Page {
         return getRequestContext().getUrl("about", getWebsite());
     }
     
-//    public Urls getUrls() {
-//        return getRequestContext().getUrls();
-//    }
-    
     public boolean isDevMode() {
         return getRequestContext().isDevMode();
     }
@@ -169,15 +165,6 @@ public class Page {
         return websites;
     }
     
-//    private WebsiteData getWebsiteData() {
-//        if (websiteData == null) {
-//            Website w = getWebsite();
-//            if (w != null) {
-//                websiteData = getRequestContext().getApp().getSharedData().getWebsite(w.getWebsiteId());
-//            }
-//        }
-//        return websiteData;
-//    }
     
     public String getWebsiteHomeUrl() {
         return getUrl(getWebsite().getRequestPath());

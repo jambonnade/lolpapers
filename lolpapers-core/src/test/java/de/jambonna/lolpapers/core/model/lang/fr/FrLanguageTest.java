@@ -67,10 +67,6 @@ public class FrLanguageTest {
         sd.update();
         return sd;
     }
-//    public SyntagmeDefinition getNewSDSVerbal() {
-//        SyntagmeDefinition sd = new SyntagmeDefinition(frLang.getSyntagmeType(TYPE_SVERBAL));
-//        return sd;
-//    }
     public SyntagmeDefinition getNewSDCompCirc() {
         SyntagmeDefinition sd = new SyntagmeDefinition(frLang.getSyntagmeType(TYPE_COMPCIRC));
         return sd;
@@ -2155,41 +2151,6 @@ public class FrLanguageTest {
                 "", 
                 defaultSeed, "xxx",
                 FLAG_COMMON_CTX_REF_1PS);
-
-//        assertSDCompCircCtxSamplesEqual(
-//                "je dors <xxx>\n" +
-//                "je dormais <xxx>\n" +
-//                "je dormirai <xxx>\n", 
-//                defaultSeed, "xxx",
-//                FLAG_COMMON_CTX_REF_1PS);
-//        
-//        assertSDCompCircCtxSamplesEqual(
-//                "il·elle dort <xxx>\n" +
-//                "il·elle dormait <xxx>\n" +
-//                "il·elle dormira <xxx>\n", 
-//                defaultSeed, "xxx",
-//                FLAG_COMMON_CTX_REF_3P);
-//        
-//        assertSDCompCircCtxSamplesEqual(
-//                "il/elle dort <xxx>\n" +
-//                "il/elle dormait <xxx>\n" +
-//                "il/elle dormira <xxx>\n", 
-//                defaultSeed, "xxx",
-//                FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_T_I);
-//        
-//        assertSDCompCircCtxSamplesEqual(
-//                "elle dort <xxx>\n" +
-//                "elle dormait <xxx>\n" +
-//                "elle dormira <xxx>\n", 
-//                defaultSeed, "xxx",
-//                FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S, FLAG_COMMON_CTX_REF3P_G_F);
-//        
-//        assertSDCompCircCtxSamplesEqual(
-//                "ils dorment <xxx>\n" +
-//                "ils dormaient <xxx>\n" +
-//                "ils dormiront <xxx>\n", 
-//                defaultSeed, "xxx",
-//                FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P, FLAG_COMMON_CTX_REF3P_G_M);
         
     }
 

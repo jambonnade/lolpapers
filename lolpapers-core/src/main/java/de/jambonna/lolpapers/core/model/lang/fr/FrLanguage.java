@@ -14,9 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-/**
- *
- */
+
 public class FrLanguage extends LanguageAbstract {
 
     public static final String CODE = "fr";
@@ -44,14 +42,6 @@ public class FrLanguage extends LanguageAbstract {
     public static final String FLAG_NOM_CTX_COMPL_NONE = "cc0";
     public static final String FLAG_NOM_CTX_COMPL_COMPL = "cc1";
     
-//    public static final String ATTR_NOM_NOMBRE = "nombre";
-//    public static final String FLAG_NOM_NOMBRE_SINGULIER = "ns";
-//    public static final String FLAG_NOM_NOMBRE_PLURIEL = "np";
-//
-//    public static final String ATTR_NOM_GENRE = "genre";
-//    public static final String FLAG_NOM_GENRE_FEMININ = "gf";
-//    public static final String FLAG_NOM_GENRE_MASCULIN = "gm";
-//    public static final String FLAG_NOM_GENRE_EPICENE = "gx";
 
     public static final String ATTR_NOM_TYPE = "type";
     public static final String FLAG_NOM_TYPE_ANIME = "ta";
@@ -72,7 +62,6 @@ public class FrLanguage extends LanguageAbstract {
     
     public static final String TYPE_VERBE = "v";
     
-//    public static final String AGRP_VERBE_CTX_SUJET = "csujet";
     public static final String ATTR_VERBE_CTX_SUJET_PERS = "csujetp";
     public static final String FLAG_VERBE_CTX_SUJET_PERS_1S = "cs1s";
     public static final String FLAG_VERBE_CTX_SUJET_PERS_2S = "cs2s";
@@ -100,7 +89,6 @@ public class FrLanguage extends LanguageAbstract {
     public static final String FLAG_VERBE_CTX_COD_AFTER = "ccoda";
     public static final String FLAG_VERBE_CTX_COD_BEFORE = "ccodb";
     
-//    public static final String AGRP_VERBE_CTX_CODINFO = "ccodi";
     public static final String ATTR_VERBE_CTX_CODINFO_PERS = "ccodip";
     public static final String FLAG_VERBE_CTX_CODINFO_PERS_1S = "ccod1s";
     public static final String FLAG_VERBE_CTX_CODINFO_PERS_2S = "ccod2s";
@@ -119,7 +107,6 @@ public class FrLanguage extends LanguageAbstract {
     public static final String FLAG_VERBE_CTX_CODINFO_TYPE_INANIME = "ccodti";
     public static final String FLAG_VERBE_CTX_CODINFO_TYPE_ABSTRAIT = "ccodtabs";
     
-//    public static final String AGRP_VERBE_CTX_PPASSE = "cpp";
     public static final String ATTR_VERBE_CTX_PPASSE_AUX = "cppa";
     public static final String FLAG_VERBE_CTX_PPASSE_AUX_NONE = "cppa0";
     public static final String FLAG_VERBE_CTX_PPASSE_AUX_AVOIR = "cppaa";
@@ -150,7 +137,6 @@ public class FrLanguage extends LanguageAbstract {
     public static final String FLAG_VERBE_CC_WITHOUT = "cc0";
     public static final String FLAG_VERBE_CC_WITH = "cc1";
 
-//    public static final String TYPE_SVERBAL = "sv";
     
     
     public static final String TYPE_COMPCIRC = "cc";
@@ -168,12 +154,9 @@ public class FrLanguage extends LanguageAbstract {
     public static final String FLAG_COMMON_CTX_REF_1PS = "cr1s";
     public static final String FLAG_COMMON_CTX_REF_2PS = "cr2s";
     public static final String FLAG_COMMON_CTX_REF_3P = "cr3";
-//    public static final String FLAG_COMMON_CTX_REF_3PS = "cr3s";
     public static final String FLAG_COMMON_CTX_REF_1PP = "cr1p";
     public static final String FLAG_COMMON_CTX_REF_2PP = "cr2p";
-//    public static final String FLAG_COMMON_CTX_REF_3PP = "cr3p";
 
-//    public static final String AGRP_COMMON_CTX_REF3P = "cref3p";
     public static final String ATTR_COMMON_CTX_REF3P_NB = "cref3pn";
     public static final String FLAG_COMMON_CTX_REF3P_NB_S = "cr3pns";
     public static final String FLAG_COMMON_CTX_REF3P_NB_P = "cr3pnp";
@@ -283,41 +266,6 @@ public class FrLanguage extends LanguageAbstract {
         
         // Prefixes de mise en situation
         String[][][] prefixes = {
-//            { { "un " },    { FLAG_NOM_CTX_DETERMINANT_UNDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN } },
-//            { { "une " },   { FLAG_NOM_CTX_DETERMINANT_UNDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ } },
-//            { { "un·e " },  { FLAG_NOM_CTX_DETERMINANT_UNDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_EPICENE } },
-//            { { "des " },   { FLAG_NOM_CTX_DETERMINANT_UNDEF }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            
-//            { { "du " },    { FLAG_NOM_CTX_DETERMINANT_PART }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "de la " }, { FLAG_NOM_CTX_DETERMINANT_PART }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "du·de la " }, { FLAG_NOM_CTX_DETERMINANT_PART }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_EPICENE }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "de l'" },  { FLAG_NOM_CTX_DETERMINANT_PART }, { FLAG_NOM_NOMBRE_SINGULIER }, { FLAG_COMMON_ELISION_ON } },
-//            { { "des " },   { FLAG_NOM_CTX_DETERMINANT_PART }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            
-//            { { "le " },    { FLAG_NOM_CTX_DETERMINANT_ARTDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "la " },    { FLAG_NOM_CTX_DETERMINANT_ARTDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "le·la " }, { FLAG_NOM_CTX_DETERMINANT_ARTDEF }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_EPICENE }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "l'" },     { FLAG_NOM_CTX_DETERMINANT_ARTDEF }, { FLAG_NOM_NOMBRE_SINGULIER }, { FLAG_COMMON_ELISION_ON } },
-//            { { "les " },   { FLAG_NOM_CTX_DETERMINANT_ARTDEF }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            
-//            { { "mon " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PS }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "ma " },    { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PS }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "mon " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PS }, { FLAG_NOM_NOMBRE_SINGULIER, }, { FLAG_COMMON_ELISION_ON } },
-//            { { "mes " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PS }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            { { "ton " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PS }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "ta " },    { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PS }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "ton " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PS }, { FLAG_NOM_NOMBRE_SINGULIER }, { FLAG_COMMON_ELISION_ON } },
-//            { { "tes " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PS }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            { { "son " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_MASCULIN }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "sa " },    { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S }, { FLAG_NOM_NOMBRE_SINGULIER, FLAG_NOM_GENRE_FEMININ }, { FLAG_COMMON_ELISION_OFF } },
-//            { { "son " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S }, { FLAG_NOM_NOMBRE_SINGULIER }, { FLAG_COMMON_ELISION_ON } },
-//            { { "ses " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            { { "notre " }, { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PP }, { FLAG_NOM_NOMBRE_SINGULIER } },
-//            { { "nos " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_1PP }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            { { "votre " }, { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PP }, { FLAG_NOM_NOMBRE_SINGULIER } },
-//            { { "vos " },   { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_2PP }, { FLAG_NOM_NOMBRE_PLURIEL } },
-//            { { "leur " },  { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P }, { FLAG_NOM_NOMBRE_SINGULIER } },
-//            { { "leurs " }, { FLAG_NOM_CTX_DETERMINANT_POSS, FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P }, { FLAG_NOM_NOMBRE_PLURIEL } },
             // Note : mettra qd meme les determinants si genre inconnu pour les 
             // mises en situation meme si le contexte d'origine n'avait pas de 
             // determinant indiquant le genre.
@@ -443,9 +391,6 @@ public class FrLanguage extends LanguageAbstract {
                 .flag(FLAG_NOM_CTX_GENRE_MASCULIN).setQuickCode("M").end()
                 .flag(FLAG_NOM_CTX_GENRE_EPICENE).setQuickCode("X").end()
                 .end()
-//            .update()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_GENRE_UNKNOWN)
-//                .end()
             ;
     }
     
@@ -460,15 +405,6 @@ public class FrLanguage extends LanguageAbstract {
     
     protected void addCommonNomAttributes1(SyntagmeType.Builder builder) {
         builder
-//            .attribute(ATTR_NOM_NOMBRE)
-//                .flag(FLAG_NOM_NOMBRE_SINGULIER).end()
-//                .flag(FLAG_NOM_NOMBRE_PLURIEL).end()
-//                .end()
-//            .attribute(ATTR_NOM_GENRE)
-//                .flag(FLAG_NOM_GENRE_FEMININ).end()
-//                .flag(FLAG_NOM_GENRE_MASCULIN).end()
-//                .flag(FLAG_NOM_GENRE_EPICENE).end()
-//                .end()
             .attribute(ATTR_NOM_TYPE)
                 .flag(FLAG_NOM_TYPE_ANIME).setQuickCode("TA").end()
                 .flag(FLAG_NOM_TYPE_INANIME).setQuickCode("TI").end()
@@ -489,56 +425,7 @@ public class FrLanguage extends LanguageAbstract {
     }
     
     protected void addCommonNomAttributesUpdates(SyntagmeType.Builder builder) {
-        builder
-            // Positionne le contexte à partir du genre/nombre de la def
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_NOMBRE_SINGULIER).end()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_NOMBRE_SINGULIER)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_NOMBRE_PLURIEL).end()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_NOMBRE_PLURIEL)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_GENRE_FEMININ).end()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_GENRE_FEMININ)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_GENRE_MASCULIN).end()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_GENRE_MASCULIN)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_GENRE_EPICENE).end()
-//                .setAttributeFlagsTo(FLAG_NOM_CTX_GENRE_EPICENE)
-//                .end()
-
-            // Fixe genre/nombre de la definition/remplacement à partir du contexte
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_CTX_NOMBRE_SINGULIER).end()
-//                .setAndLimitAttributeFlagsTo(FLAG_NOM_NOMBRE_SINGULIER)
-//                .setAndLimitReplAttributeFlagsTo(FLAG_NOM_NOMBRE_SINGULIER)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_CTX_NOMBRE_PLURIEL).end()
-//                .setAndLimitAttributeFlagsTo(FLAG_NOM_NOMBRE_PLURIEL)
-//                .setAndLimitReplAttributeFlagsTo(FLAG_NOM_NOMBRE_PLURIEL)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_CTX_GENRE_FEMININ).end()
-//                .setAndLimitAttributeFlagsTo(FLAG_NOM_GENRE_FEMININ)
-//                .setAndLimitReplAttributeFlagsTo(FLAG_NOM_GENRE_FEMININ)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_CTX_GENRE_MASCULIN).end()
-//                .setAndLimitAttributeFlagsTo(FLAG_NOM_GENRE_MASCULIN)
-//                .setAndLimitReplAttributeFlagsTo(FLAG_NOM_GENRE_MASCULIN)
-//                .end()
-//            .update()
-//                .condition().flagsOn(FLAG_NOM_CTX_GENRE_EPICENE).end()
-//                .setAndLimitAttributeFlagsTo(FLAG_NOM_GENRE_EPICENE)
-//                .setAndLimitReplAttributeFlagsTo(FLAG_NOM_GENRE_EPICENE)
-//                .end()
-            
+        builder            
             // Compléments possibles à partir de la définition
             .update()
                 .condition().flagsOn(FLAG_NOM_COMPL_NONE).end()
@@ -563,7 +450,6 @@ public class FrLanguage extends LanguageAbstract {
             .update()
                 .condition().flagsOn(FLAG_NOM_CTX_GENRE_EPICENE).end()
                 .setAttributeFlagsTo(FLAG_NOM_TYPE_ANIME)
-//                .setReplAttributeFlagsTo(FLAG_NOM_TYPE_ANIME)
                 .end()
             // Correspondance des types
             .update()
@@ -693,7 +579,6 @@ public class FrLanguage extends LanguageAbstract {
             { { "{SN} expérimenté{GNMARK1}" }, { FLAG_NOM_CTX_COMPL_COMPL }, { FLAG_NOM_TYPE_ANIME }, { }, { FLAG_NOM_TYPE_INANIME, FLAG_NOM_TYPE_ABSTRAIT } },
             { { "{SN} qui parle{PVMARK1} allemand" }, { FLAG_NOM_CTX_COMPL_COMPL }, { FLAG_NOM_TYPE_ANIME }, { }, { FLAG_NOM_TYPE_ABSTRAIT } },
             
-//            { { "{SN} qui fume{PVMARK1}" },     { FLAG_NOM_CTX_COMPL_COMPL }, { }, { FLAG_NOM_TYPE_ABSTRAIT } },
             
             { { "{SN} légendaire{PMARK1}" }, { FLAG_NOM_CTX_COMPL_COMPL }, { FLAG_NOM_TYPE_ABSTRAIT }, {  } },
 
@@ -771,12 +656,6 @@ public class FrLanguage extends LanguageAbstract {
         
         addCommonNomCtxSamples(builder);
         
-//        String[][][] samples = {
-//            // On veut spécifiquement un sn avec determinant défini : doit marcher avec l'expression "Vive xxx"
-//            { { "vive{PVMARK1} {SN}" }, { }, { FLAG_SNOMINAL_DETERMINANT_DEF }, { }, { FLAG_SNOMINAL_DETERMINANT_UNDEF } },
-//        };
-//
-//        addCtxSampleUpdates(builder, samples);
 
         return new SyntagmeType(builder);
     }
@@ -799,14 +678,11 @@ public class FrLanguage extends LanguageAbstract {
                 .limitAttributeFlagsTo(FLAG_VERBE_CC_WITHOUT, FLAG_VERBE_NEGATION_WITHOUT)
                 .setAttributeFlagsTo(FLAG_VERBE_CTX_PREFLECHI_NO, FLAG_VERBE_CTX_PPASSE_AUX_NONE,
                     FLAG_VERBE_CC_WITHOUT, FLAG_VERBE_NEGATION_WITHOUT)
-//                .setReplAttributeFlagsTo(
-//                        FLAG_VERBE_NEGATION_WITH, FLAG_VERBE_NEGATION_WITHOUT)
                 .end()
             ;
         
         builder
             .attribute(ATTR_VERBE_CTX_SUJET_PERS).setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_SUJET)
                 .flag(FLAG_VERBE_CTX_SUJET_PERS_1S).end()
                 .flag(FLAG_VERBE_CTX_SUJET_PERS_2S).end()
                 .flag(FLAG_VERBE_CTX_SUJET_PERS_3S).end()
@@ -817,14 +693,12 @@ public class FrLanguage extends LanguageAbstract {
                 .end()
             .attribute(ATTR_VERBE_CTX_SUJET_G)
                 .setContext(true).setRequired(false)
-//                .setGroupCode(AGRP_VERBE_CTX_SUJET)
                 .flag(FLAG_VERBE_CTX_SUJET_G_0).end()
                 .flag(FLAG_VERBE_CTX_SUJET_G_F).end()
                 .flag(FLAG_VERBE_CTX_SUJET_G_M).end()
                 .end()
             .attribute(ATTR_VERBE_CTX_SUJET_TYPE)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_SUJET)
                 .flag(FLAG_VERBE_CTX_SUJET_TYPE_A).end()
                 .flag(FLAG_VERBE_CTX_SUJET_TYPE_I).end()
                 .flag(FLAG_VERBE_CTX_SUJET_TYPE_ABS).end()
@@ -844,7 +718,6 @@ public class FrLanguage extends LanguageAbstract {
                 .end()
             .attribute(ATTR_VERBE_CTX_CODINFO_PERS)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_CODINFO)
                 .flag(FLAG_VERBE_CTX_CODINFO_PERS_1S).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_PERS_2S).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_PERS_3S).end()
@@ -854,28 +727,24 @@ public class FrLanguage extends LanguageAbstract {
                 .end()
             .attribute(ATTR_VERBE_CTX_CODINFO_GENRE)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_CODINFO)
                 .flag(FLAG_VERBE_CTX_CODINFO_GENRE_0).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_GENRE_F).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_GENRE_M).end()
                 .end()
             .attribute(ATTR_VERBE_CTX_CODINFO_TYPE)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_CODINFO)
                 .flag(FLAG_VERBE_CTX_CODINFO_TYPE_ANIME).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_TYPE_INANIME).end()
                 .flag(FLAG_VERBE_CTX_CODINFO_TYPE_ABSTRAIT).end()
                 .end()
             .attribute(ATTR_VERBE_CTX_PPASSE_AUX)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_PPASSE)
                 .flag(FLAG_VERBE_CTX_PPASSE_AUX_NONE).end()
                 .flag(FLAG_VERBE_CTX_PPASSE_AUX_AVOIR).end()
                 .flag(FLAG_VERBE_CTX_PPASSE_AUX_ETRE).end()
                 .end()
             .attribute(ATTR_VERBE_CTX_PPASSE_AUXE)
                 .setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_VERBE_CTX_PPASSE)
                 .flag(FLAG_VERBE_CTX_PPASSE_AUXE_ACTIVE).end()
                 .flag(FLAG_VERBE_CTX_PPASSE_AUXE_PASSIVE).end()
                 .flag(FLAG_VERBE_CTX_PPASSE_AUXE_PASSIVECDA).end()
@@ -1285,7 +1154,6 @@ public class FrLanguage extends LanguageAbstract {
             ;
         
         addCommonCtxMultiRefAttributes(builder);
-//        builder.attribute(ATTR_COMMON_CTX_REF).setRequired(true);
         
         builder
             .attribute(ATTR_COMPCIRC_TYPE)
@@ -1299,74 +1167,7 @@ public class FrLanguage extends LanguageAbstract {
         
         addCommonCtxRefAttributesUpdates(builder);
 
-        
-//        String[][][] ppSampleVar = {
-//            { { "je" },     { FLAG_COMMON_CTX_REF_1PS } },
-//            { { "tu" },     { FLAG_COMMON_CTX_REF_2PS } },
-//            { { "il/elle" }, { FLAG_COMMON_CTX_REF_3P } },
-//            { { "il·elle" }, { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_T_A } },
-//            { { "il" },     { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_G_M } },
-//            { { "elle" },   { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_G_F } },
-//            { { "ils/elles" }, { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P } },
-//            { { "il·elle·s" }, { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P, FLAG_COMMON_CTX_REF3P_T_A } },
-//            { { "ils" },    { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P, FLAG_COMMON_CTX_REF3P_G_M } },
-//            { { "elles" },  { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P, FLAG_COMMON_CTX_REF3P_G_F } },
-//            { { "nous" },   { FLAG_COMMON_CTX_REF_1PP } },
-//            { { "vous" },   { FLAG_COMMON_CTX_REF_2PP } },
-//        };
-//        
-//        addCtxVarUpdates(builder, ppSampleVar, "PP", CtxVarValueType.DEFAULT);
-//
-//        String[][][] svSampleVars = {
-//            { { "SV1S",     "dors" } },
-//            { { "SV2S",     "dors" } },
-//            { { "SV1P",     "dormons" } },
-//            { { "SV2P",     "dormez" } },
-//            { { "SV3S",     "dort" } },
-//            { { "SV3P",     "dorment" } },
-//
-//            { { "SVP1S",    "dormais" } },
-//            { { "SVP2S",    "dormais" } },
-//            { { "SVP1P",    "dormions" } },
-//            { { "SVP2P",    "dormiez" } },
-//            { { "SVP3S",    "dormait" } },
-//            { { "SVP3P",    "dormaient" } },
-//
-//            { { "SVF1S",    "dormirai" } },
-//            { { "SVF2S",    "dormiras" } },
-//            { { "SVF1P",    "dormirons" } },
-//            { { "SVF2P",    "dormirez" } },
-//            { { "SVF3S",    "dormira" } },
-//            { { "SVF3P",    "dormiront" } },
-//        };
-//        
-//        addCtxVarUpdates(builder, svSampleVars, null, CtxVarValueType.RAND);
-//
-//        String[][][] samples = {
-//            { { "{PP} {SV1S} {TEXT}" },     { FLAG_COMMON_CTX_REF_1PS } },
-//            { { "{PP} {SV2S} {TEXT}" },     { FLAG_COMMON_CTX_REF_2PS } },
-//            { { "{PP} {SV1P} {TEXT}" },     { FLAG_COMMON_CTX_REF_1PP } },
-//            { { "{PP} {SV2P} {TEXT}" },     { FLAG_COMMON_CTX_REF_2PP } },
-//            { { "{PP} {SV3S} {TEXT}" },     { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S } },
-//            { { "{PP} {SV3P} {TEXT}" },     { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P } },
-//
-//            { { "{PP} {SVP1S} {TEXT}" },    { FLAG_COMMON_CTX_REF_1PS } },
-//            { { "{PP} {SVP2S} {TEXT}" },    { FLAG_COMMON_CTX_REF_2PS } },
-//            { { "{PP} {SVP1P} {TEXT}" },    { FLAG_COMMON_CTX_REF_1PP } },
-//            { { "{PP} {SVP2P} {TEXT}" },    { FLAG_COMMON_CTX_REF_2PP } },
-//            { { "{PP} {SVP3S} {TEXT}" },    { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S } },
-//            { { "{PP} {SVP3P} {TEXT}" },    { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P } },
-//
-//            { { "{PP} {SVF1S} {TEXT}" },    { FLAG_COMMON_CTX_REF_1PS } },
-//            { { "{PP} {SVF2S} {TEXT}" },    { FLAG_COMMON_CTX_REF_2PS } },
-//            { { "{PP} {SVF1P} {TEXT}" },    { FLAG_COMMON_CTX_REF_1PP } },
-//            { { "{PP} {SVF2P} {TEXT}" },    { FLAG_COMMON_CTX_REF_2PP } },
-//            { { "{PP} {SVF3S} {TEXT}" },    { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_S } },
-//            { { "{PP} {SVF3P} {TEXT}" },    { FLAG_COMMON_CTX_REF_3P, FLAG_COMMON_CTX_REF3P_NB_P } },
-//        };
-//
-//        addCtxSampleUpdates(builder, samples);
-        
+                
         return new SyntagmeType(builder);
     }
     
@@ -1382,18 +1183,15 @@ public class FrLanguage extends LanguageAbstract {
                 .flag(FLAG_COMMON_CTX_REF_2PP).end()
                 .end()
             .attribute(ATTR_COMMON_CTX_REF3P_NB).setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_COMMON_CTX_REF3P)
                 .flag(FLAG_COMMON_CTX_REF3P_NB_S).end()
                 .flag(FLAG_COMMON_CTX_REF3P_NB_P).end()
                 .end()
             .attribute(ATTR_COMMON_CTX_REF3P_G).setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_COMMON_CTX_REF3P)
                 .flag(FLAG_COMMON_CTX_REF3P_G_0).end()
                 .flag(FLAG_COMMON_CTX_REF3P_G_F).end()
                 .flag(FLAG_COMMON_CTX_REF3P_G_M).end()
                 .end()
             .attribute(ATTR_COMMON_CTX_REF3P_T).setContext(true).setRequired(true)
-//                .setGroupCode(AGRP_COMMON_CTX_REF3P)
                 .flag(FLAG_COMMON_CTX_REF3P_T_A).end()
                 .flag(FLAG_COMMON_CTX_REF3P_T_I).end()
                 .end()
@@ -1486,18 +1284,7 @@ public class FrLanguage extends LanguageAbstract {
         }
         ub.setCtxVarValue(var, values, valuesType);
     }
-//    protected void addCtxVarUpdates(SyntagmeType.Builder builder, String[][] varsData, String var, boolean multiValues) {
-//        for (String[] varData : varsData) {
-//            int dataPos = 0;
-//            String curVar = var;
-//            if (curVar == null) {
-//                curVar = varData[0];
-//                dataPos = 1;
-//            }
-//            addCtxVarUpdate(builder, curVar, varData[dataPos], multiValues, 
-//                    Arrays.copyOfRange(varData, dataPos + 1, varData.length));
-//        }
-//    }
+
     protected void addCtxVarUpdates(SyntagmeType.Builder builder, 
             String[][][] varsData, String var, CtxVarValueType valuesType) {
         for (String[][] varData : varsData) {
@@ -1592,20 +1379,6 @@ public class FrLanguage extends LanguageAbstract {
 //        System.out.println("1st word '" + normalizedFirstReplWord + "'");
 
         boolean needsElision = replacement.isFlagOn(FLAG_COMMON_ELISION_ON);
-//        if (normalizedFirstReplWord.length() > 0) {
-//            switch (normalizedFirstReplWord.charAt(0)) {
-//                case 'a':
-//                case 'e':
-//                case 'i':
-//                case 'o':
-//                case 'u':
-//                    needsElision = true;
-//                    break;
-//                case 'h':
-//                    needsElision = !replacement.isFlagOn(FLAG_COMMON_HASPIRE);
-//                    break;
-//            }
-//        }
         
 
         String lastWord = getNormalizedPrecedingWords(ctx, 1);
@@ -1762,155 +1535,9 @@ public class FrLanguage extends LanguageAbstract {
     
     
 
-//    @Override
-//    protected void addSyntagmeMainDescription(SyntagmeDescriptionCreationCtx ctx) {
-//        ctx.setFlagTextSeparator(" ou ");
-//        
-//        SyntagmeDefinitionAbstract sd = ctx.getSd();
-//        String sdTypeCode = sd.getType().getCode();
-//
-//        switch (sdTypeCode) {
-//            case TYPE_NOM:
-//                addSyntagmeDescriptionText(ctx, "un");
-//                addSyntagmeDescriptionType(ctx, "nom commun");
-//                break;
-//            case TYPE_SNOMINAL:
-//                addSyntagmeDescriptionText(ctx, "un");
-//                addSyntagmeDescriptionType(ctx, "syntagme nominal");
-//                break;
-//            case TYPE_VERBE:
-//                addSyntagmeDescriptionText(ctx, "un");
-//                addSyntagmeDescriptionType(ctx, "verbe");
-//                break;
-//            case TYPE_SVERBAL:
-//                addSyntagmeDescriptionText(ctx, "un");
-//                addSyntagmeDescriptionType(ctx, "syntagme verbal");
-//                break;
-//            case TYPE_COMPCIRC:
-//                addSyntagmeDescriptionText(ctx, "un");
-//                addSyntagmeDescriptionType(ctx, "complément circonstanciel");
-//                break;
-//            default:
-//                throw new UnsupportedOperationException("Unsupported type");
-//        }
-//        
-//        
-//        String curAttrGroup = "main";
-//        SyntagmeFlag flagSGenre;
-//        SyntagmeFlag flagSNombre;
-//        SyntagmeFlag flagSPers;
-//        switch (sdTypeCode) {
-//            case TYPE_NOM:
-//            case TYPE_SNOMINAL:
-//                
-//                Set<SyntagmeFlag> flagsGenre = ctx.getSpecificFlags(ATTR_NOM_GENRE);
-//                Set<SyntagmeFlag> flagsNombre = ctx.getSpecificFlags(ATTR_NOM_NOMBRE);
-//                if (flagsGenre.size() == 1 && flagsNombre.size() == 1) {
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsGenre);
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsNombre);
-//                } else {
-//                    ctx.setFlagLabel(FLAG_NOM_NOMBRE_SINGULIER, "au ", "singulier");
-//                    ctx.setFlagLabel(FLAG_NOM_NOMBRE_PLURIEL, "au ", "pluriel");
-//
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsGenre);
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsNombre);
-//                }
-//                addSyntagmeDescriptionAttrFlags(ctx, "type", "de type ", ctx.getSpecificFlags(ATTR_NOM_TYPE));
-//                addSyntagmeDescriptionAttrFlags(ctx, "compl", null, ctx.getSpecificFlags(ATTR_NOM_COMPLEMENT));
-//                break;
-//                
-//            case TYPE_VERBE:
-//            case TYPE_SVERBAL:
-//                
-//                addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, ctx.getSpecificFlags(ATTR_VERBE_TYPE));
-//                
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_FUTUR, "au ", "futur");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_IMPARFAIT, "à l'", "imparfait");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_IMPERATIF, "à l'", "impératif");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_INFINITF, "à l'", "infinitif");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_PARTICIPEPASSE, "au ", "paricipe passé");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_PARTICIPEPRESENT, "au ", "paricipe présent");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_PASSESIMPLE, "au ", "passé simple");
-//                ctx.setFlagLabel(FLAG_VERBE_FORME_PRESENT, "au ", "présent");
-//
-//                SyntagmeFlag flagForme = ctx.getSpecificFlag(ATTR_VERBE_FORME);
-//                Set<SyntagmeFlag> flagsForme = ctx.getSpecificFlags(ATTR_VERBE_FORME);
-//                Set<SyntagmeFlag> flagsConjNombre = ctx.getSpecificFlags(ATTR_VERBE_CONJ_NOMBRE);
-//                Set<SyntagmeFlag> flagsConjGenre = ctx.getSpecificFlags(ATTR_VERBE_CONJ_GENRE);
-//                Set<SyntagmeFlag> flagsConjPersonne = ctx.getSpecificFlags(ATTR_VERBE_CONJ_PERSONNE);
-//                if (sdTypeCode.equals(TYPE_VERBE)) {
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsForme);
-//                } else {
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, "avec un verbe ", flagsForme);
-//                }
-//                if (flagForme != null && FLAG_VERBE_FORME_PARTICIPEPASSE.equals(flagForme.getCode())) {
-//                    ctx.setFlagLabel(FLAG_VERBE_CONJ_FEMININ, "au ", "féminin");
-//                    ctx.setFlagLabel(FLAG_VERBE_CONJ_MASCULIN, "au ", "masculin");
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, "accordé ", flagsConjGenre);
-//                    addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, flagsConjNombre);
-//                } else {
-//                    if (!flagsConjPersonne.isEmpty() && !flagsConjNombre.isEmpty()) {
-//                        addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, "conjugué à la ", flagsConjPersonne);
-//                        addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, "du ", flagsConjNombre);
-//                    }
-//                }
-//
-//                addSyntagmeDescriptionAttrFlags(ctx, "cc", null, ctx.getSpecificFlags(ATTR_VERBE_COMPCIRC));
-//
-//                curAttrGroup = "sujet";
-//                flagSGenre = ctx.getSpecificFlag(ATTR_VERBE_SUJET_GENRE);
-//                flagSNombre = ctx.getSpecificFlag(ATTR_VERBE_SUJET_NOMBRE);
-//                flagSPers = ctx.getSpecificFlag(ATTR_COMPCIRC_SUJET_PERSONNE);
-//                if (flagSGenre != null && FLAG_COMPCIRC_SUJET_GENRE_NONE.equals(flagSGenre.getCode())
-//                        && flagSNombre != null && FLAG_COMPCIRC_SUJET_NOMBRE_NONE.equals(flagSNombre.getCode())
-//                        && flagSPers != null && FLAG_COMPCIRC_SUJET_PERSONNE_NONE.equals(flagSPers.getCode())) {
-//                    addSyntagmeDescriptionAttrCustom(ctx, curAttrGroup, null, 
-//                            "sans référence au sujet", 
-//                            "Ne contient rien qui indique le genre, le nombre ou la personne du sujet hormis la conjugaison du verbe");
-//                }
-//
-//                break;
-//                
-//            case TYPE_COMPCIRC:
-//                ctx.setFlagLabel(FLAG_COMPCIRC_TYPE_LIEU, "de ", "lieu");
-//                ctx.setFlagLabel(FLAG_COMPCIRC_TYPE_TEMPS, "de ", "temps");
-//                ctx.setFlagLabel(FLAG_COMPCIRC_TYPE_OTHER, "de ", "manière ou autres");
-//
-//                addSyntagmeDescriptionAttrFlags(ctx, curAttrGroup, null, ctx.getSpecificFlags(ATTR_COMPCIRC_TYPE));
-//                
-//                curAttrGroup = "sujet";
-//                flagSGenre = ctx.getSpecificFlag(ATTR_COMPCIRC_SUJET_GENRE);
-//                flagSNombre = ctx.getSpecificFlag(ATTR_COMPCIRC_SUJET_NOMBRE);
-//                flagSPers = ctx.getSpecificFlag(ATTR_COMPCIRC_SUJET_PERSONNE);
-//                if (flagSGenre != null && FLAG_COMPCIRC_SUJET_GENRE_NONE.equals(flagSGenre.getCode())
-//                        && flagSNombre != null && FLAG_COMPCIRC_SUJET_NOMBRE_NONE.equals(flagSNombre.getCode())
-//                        && flagSPers != null && FLAG_COMPCIRC_SUJET_PERSONNE_NONE.equals(flagSPers.getCode())) {
-//                    addSyntagmeDescriptionAttrCustom(ctx, curAttrGroup, null, 
-//                            "sans référence au sujet", 
-//                            "Ne contient rien qui indique le genre, le nombre ou la personne du sujet");
-//                }
-//
-//                break;
-//        }
-//    }
 
     @Override
     protected void addSDefReplacementHTMLInfo(SDefHTMLInfoCtx ctx) {
-        /**
-         * De type *animé*, *inanimé* ou *abstrait*
-         * De type inanimé ou abstrait
-         * De type animé
-         * *Avec* ou *sans compléments*
-         * *Avec compléments*
-         * *Sans compléments*
-         * Déterminant *défini* ou *indéfini*
-         * 
-         * Au présent ou à l'imparfait
-         * Peut contenir les marques de négation
-         * Sans les marques de négation
-         * Avec ou sans complément circonstanciel
-         * 
-         */
         ctx.setFlagOptionSeparatorLast(" ou ");
         
         
@@ -1989,29 +1616,6 @@ public class FrLanguage extends LanguageAbstract {
 
     @Override
     protected void addSDefContextHTMLInfo(SDefHTMLInfoCtx ctx) {
-        /**
-         * Indications genre/nombre : aucunes
-         * Indications genre/nombre : masculin singulier
-         * Indications genre/nombre : pluriel
-         * Indications genre/nombre : épicene pluriel
-         * Nom introduit par article indef et article def
-         * Nom introduit par pronom possessif (voir référent potentiel)
-         * Suivi de compléments
-         * Non suivi de compléments
-         * Pas de référent potentiel
-         * Référent potentiel : 1ere p du pluriel
-         * Référents potentiels : 1ere personne du singulier, 3ème personne du singulier/féminin/inanimé
-         * 
-         * Sujet : 2eme personne singulier, masculin
-         * Sujet : animé féminin pluriel
-         * Sujet : inanimé pluriel
-         * Pronom réfléchi en amont
-         * Suivi d'un syntagme nominal inanimé
-         * COD pronom en amont : 2ème personne du pluriel
-         * COD pronom en amont : 3ème personne du singulier animé
-         * Contexte participe passé : auxiliaire être (passif)
-         * Autres référents potentiels : 1ere personne du singulier, 3ème personne du singulier/féminin/inanimé
-         */
         
         ctx.setFlagOptionSeparatorLast(" et ");
         

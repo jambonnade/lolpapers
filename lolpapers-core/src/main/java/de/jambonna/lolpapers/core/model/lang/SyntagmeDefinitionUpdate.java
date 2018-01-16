@@ -19,13 +19,6 @@ public class SyntagmeDefinitionUpdate {
     private final List<String> replAttributesToEnable;
     private final List<String> replFlagsToLimitTo;
     private final List<String> replAttributeFlagsToSetTo;
-//    private final List<String> ctxAttributesToDisable;
-//    private final List<String> ctxAttributesToEnable;
-//    private final List<String> ctxFlagsToLimitTo;
-//    private final List<String> ctxAttributeFlagsToSetTo;
-//    private final String ctxPrefix;
-//    private final String ctxSuffix;
-//    private final boolean selectingFlags;
     private final List<String> flagsToSelect;
     
     private final String ctxVar;
@@ -58,19 +51,6 @@ public class SyntagmeDefinitionUpdate {
         flags = b.getReplAttributeFlagsToSetTo();
         replAttributeFlagsToSetTo = flags != null ? Collections.unmodifiableList(new ArrayList<>(flags)) : null;
         
-//        attributes = b.getCtxAttributesToDisable();
-//        ctxAttributesToDisable = attributes != null ? Collections.unmodifiableList(new ArrayList<>(attributes)) : null;
-//        attributes = b.getCtxAttributesToEnable();
-//        ctxAttributesToEnable = attributes != null ? Collections.unmodifiableList(new ArrayList<>(attributes)) : null;
-//        flags = b.getCtxFlagsToLimitTo();
-//        ctxFlagsToLimitTo = flags != null ? Collections.unmodifiableList(new ArrayList<>(flags)) : null;
-//        flags = b.getCtxAttributeFlagsToSetTo();
-//        ctxAttributeFlagsToSetTo = flags != null ? Collections.unmodifiableList(new ArrayList<>(flags)) : null;
-        
-//        ctxPrefix = b.getCtxPrefix();
-//        ctxSuffix = b.getCtxSuffix();
-//        ctxSample = b.getCtxSample();
-//        selectingFlags = b.isSelectingFlags();
         flags = b.getFlagsToSelect();
         flagsToSelect = flags != null ? Collections.unmodifiableList(new ArrayList<>(flags)) : null;
 
@@ -128,37 +108,6 @@ public class SyntagmeDefinitionUpdate {
         return replAttributeFlagsToSetTo;
     }
 
-//    public List<String> getCtxAttributesToDisable() {
-//        return ctxAttributesToDisable;
-//    }
-//
-//    public List<String> getCtxAttributesToEnable() {
-//        return ctxAttributesToEnable;
-//    }
-//
-//    public List<String> getCtxFlagsToLimitTo() {
-//        return ctxFlagsToLimitTo;
-//    }
-//
-//    public List<String> getCtxAttributeFlagsToSetTo() {
-//        return ctxAttributeFlagsToSetTo;
-//    }
-
-//    public String getCtxPrefix() {
-//        return ctxPrefix;
-//    }
-//
-//    public String getCtxSuffix() {
-//        return ctxSuffix;
-//    }
-//
-//    public String getCtxSample() {
-//        return ctxSample;
-//    }
-
-//    public boolean isSelectingFlags() {
-//        return selectingFlags;
-//    }
 
     public List<String> getFlagsToSelect() {
         return flagsToSelect;
@@ -196,15 +145,7 @@ public class SyntagmeDefinitionUpdate {
         private List<String> replAttributesToEnable;
         private List<String> replFlagsToLimitTo;
         private List<String> replAttributeFlagsToSetTo;
-//        private List<String> ctxAttributesToDisable;
-//        private List<String> ctxAttributesToEnable;
-//        private List<String> ctxFlagsToLimitTo;
-//        private List<String> ctxAttributeFlagsToSetTo;
-//        private String ctxPrefix;
-//        private String ctxSuffix;
-//        private String ctxSample;
         private List<String> flagsToSelect;
-//        private boolean selectingFlags;
         private String ctxVar;
         private String ctxVarValue;
         private String[] ctxVarValues;
@@ -229,15 +170,6 @@ public class SyntagmeDefinitionUpdate {
             }
             return null;
         }
-//
-//        public SyntagmeDefinitionCondition getCondition() {
-//            return condition;
-//        }
-//
-//        public Builder setCondition(SyntagmeDefinitionCondition condition) {
-//            this.condition = condition;
-//            return this;
-//        }
 
         public Builder disableAttributeFlags(String... attributeCodes) {
             attributesToDisable = Arrays.asList(attributeCodes);
@@ -289,29 +221,6 @@ public class SyntagmeDefinitionUpdate {
             return this;
         }
 
-//        public Builder disableCtxAttributeFlags(String... attributeCodes) {
-//            ctxAttributesToDisable = Arrays.asList(attributeCodes);
-//            return this;
-//        }
-//        public Builder enableCtxAttributeFlags(String... attributeCodes) {
-//            ctxAttributesToEnable = Arrays.asList(attributeCodes);
-//            return this;
-//        }
-//        public Builder limitCtxAttributeFlagsTo(String... flags) {
-//            ctxFlagsToLimitTo = Arrays.asList(flags);
-//            return this;
-//        }
-//        public Builder setCtxAttributeFlagsTo(String... flags) {
-//            ctxAttributeFlagsToSetTo = Arrays.asList(flags);
-//            return this;
-//        }
-//        public Builder setAndLimitCtxAttributeFlagsTo(String... flags) {
-//            List<String> flagList = Arrays.asList(flags);
-//            ctxFlagsToLimitTo = flagList;
-//            ctxAttributeFlagsToSetTo = flagList;
-//            return this;
-//        }
-//
         
         public List<String> getAttributesToDisable() {
             return attributesToDisable;
@@ -349,59 +258,6 @@ public class SyntagmeDefinitionUpdate {
             return replAttributeFlagsToSetTo;
         }
         
-//        public List<String> getCtxAttributesToDisable() {
-//            return ctxAttributesToDisable;
-//        }
-//
-//        public List<String> getCtxAttributesToEnable() {
-//            return ctxAttributesToEnable;
-//        }
-//
-//        public List<String> getCtxFlagsToLimitTo() {
-//            return ctxFlagsToLimitTo;
-//        }
-//
-//        public List<String> getCtxAttributeFlagsToSetTo() {
-//            return ctxAttributeFlagsToSetTo;
-//        }
-        
-
-        
-//        public String getCtxPrefix() {
-//            return ctxPrefix;
-//        }
-//
-//        public Builder setCtxPrefix(String ctxPrefix) {
-//            this.ctxPrefix = ctxPrefix;
-//            return this;
-//        }
-//
-//        public String getCtxSuffix() {
-//            return ctxSuffix;
-//        }
-//
-//        public Builder setCtxSuffix(String ctxSuffix) {
-//            this.ctxSuffix = ctxSuffix;
-//            return this;
-//        }
-//
-//        public String getCtxSample() {
-//            return ctxSample;
-//        }
-//
-//        public Builder setCtxSample(String ctxSample) {
-//            this.ctxSample = ctxSample;
-//            return this;
-//        }
-//
-//        public boolean isSelectingFlags() {
-//            return selectingFlags;
-//        }
-//
-//        public Builder setSelectingFlags(boolean selectsFlags) {
-//            this.selectingFlags = selectsFlags;
-//            return this;
-//        }
         
         public List<String> getFlagsToSelect() {        
             return flagsToSelect;
@@ -539,14 +395,6 @@ public class SyntagmeDefinitionUpdate {
         public ConditionBuilder origReplFlagsOff(String... flags) {
             return flagsCond(SyntagmeDefinitionCondition.Flag.TYPE_ORIG_REPL, false, flags);
         }
-//        public ConditionBuilder possibleFlags(String... flags) {
-//            for (String flag : flags) {
-//                SyntagmeDefinitionCondition c = 
-//                        new SyntagmeDefinitionCondition.PossibleFlag(flag);
-//                newChild().setCondition(c);
-//            }
-//            return this;
-//        }
         
         public ConditionBuilder textMatch(String pattern) {
             SyntagmeDefinitionCondition c = 
@@ -569,13 +417,6 @@ public class SyntagmeDefinitionUpdate {
             newChild().setCondition(c);
             return this;
         }
-//        public ConditionBuilder phaseReplacement() {
-//            SyntagmeDefinitionCondition c = 
-//                    new SyntagmeDefinitionCondition.Phase(
-//                            SyntagmeDefinitionAbstract.Phase.REPLACEMENT);
-//            newChild().setCondition(c);
-//            return this;
-//        }
         
         public ConditionBuilder and() {
             ConditionBuilder child = newChild();

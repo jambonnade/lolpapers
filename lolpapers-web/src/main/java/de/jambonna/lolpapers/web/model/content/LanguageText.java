@@ -46,7 +46,6 @@ public class LanguageText {
     }
     
     protected String getFallbackSType(String typeCode) {
-//        String typeCode = type.getCode();
         if (!sTypeFallbacks.containsKey(typeCode)) {
             String fallbackStCodeKey = getSTypeBaseKey(null, typeCode) + ".fallback";
             String fallbackStCode = null;

@@ -4,9 +4,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import de.jambonna.lolpapers.core.app.Config;
 import javax.sql.DataSource;
 
-/**
- *
- */
+
 public class DataSourceFactory implements de.jambonna.lolpapers.core.persistence.DataSourceFactory {
 
     @Override

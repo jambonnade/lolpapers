@@ -135,45 +135,6 @@
     </div>
 
     <p class="footer-spacer">&nbsp;</p>
-            <%--
-    <div class="template-edit-st-choice">
-        <p>text: <span class="sel-text"></span> <a href="#" class="cancel">(x)</a></p>
-        <c:forEach items="${myPage.language.syntagmeTypes}" var="stItem">
-            <c:set var="st" value="${stItem.value}" />
-            <div class="st-choice disabled" data-st="${st.code}"><a href="#">${st.code}</a> ex: zboub</div>
-        </c:forEach>
-        <p class="use-placeholder">use placeholder <input type="text" /> <button>use placeholder</button></p>
-    </div>
---%>
-            <%--
-    <div class="template-edit-placeholder" style="display:none;">
-        <p>text: <span class="orig-text"></span> <a href="#" class="close">(x)</a> <a href="#" class="remove">(suppr)</a></p>
-        <p class="use-placeholder">use placeholder: <span></span></p>
-
-        <c:forEach items="${myPage.language.syntagmeTypes}" var="stItem">
-            <c:set var="st" value="${stItem.value}" />
-            <div class="row placeholder-sdef st-${st.code}" data-st="${st.code}" style="display: none;">
-                <c:forTokens items="definition,replacement" var="sdType" delims=",">
-                <div class="col-md-6 sdef ${sdType}">
-                    <c:forEach items="${st.attributes}" var="attrItem">
-                    <c:set var="attr" value="${attrItem.value}" />
-                    <c:if test="${sdType == 'definition' || !attr.definitionOnly}">
-                    <div class="sdef-attr attr-${attr.code}">
-                        <p><strong>${attr.code}</strong></p>
-                        <div class="btn-group" role="group" aria-label="...">
-                            <c:forEach items="${attr.flags}" var="flag">
-                                <button type="button" class="btn btn-default sdef-flag" data-flag="${flag.code}">${flag.code}</button>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    </c:if>
-                    </c:forEach>
-                </div>
-                </c:forTokens>
-            </div>
-        </c:forEach>
-    </div>
-            --%>
         
     <c:set var="baseTrKey" value="articleTemplate.edit.placeholderModal" />
     <div class="template-edit-placeholder modal" tabindex="-1" role="dialog" aria-labelledby="${baseHtmlId}-placeholder-modal-title">
@@ -192,29 +153,6 @@
                         <fmt:message key="${baseTrKey}.alert.attrNotSet" />
                     </div>
                     
-<%--
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4><fmt:message key="${baseTrKey}.origText.title" /></h4>
-                            <blockquote class="orig-text"></blockquote>
-
-                            <div class="context-samples">
-                                <h4><fmt:message key="${baseTrKey}.samples.title" /></h4>
-                                <ul></ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h4><fmt:message key="${baseTrKey}.article.title" /></h4>
-                            <div class="article-view well well-sm" style="height: 80px; overflow: auto;">
-                                <div class="content" style="position: relative;">
-                                    <h4 class="title-container"></h4>
-                                    <div class="descr-container"></div>
-                                    <div class="content-container"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--%>
-
 
                     <div class="row context-sections">
 
@@ -231,7 +169,6 @@
                             </h4>
 
                             <c:forEach items="${myPage.language.syntagmeTypes}" var="stItem">
-                                <%--<c:if test="${false}">--%>
                             <c:set var="st" value="${stItem.value}" />
                             <jsp:setProperty name="myPage" property="curST" value="${st}" />
                             
@@ -239,29 +176,6 @@
                                 <div class=" sdef context">
                                     <c:forEach items="${myPage.curSTCtxAttributes}" var="attr" varStatus="attrLoopStatus">
                                     <!-- attr : ${attr.code} -->
-
-                                    <%-- End of attr group 
-                                    <c:if test="${!empty lastOpenedAttrGrp && attr.groupCode != lastOpenedAttrGrp}">
-                                        </div>
-                                    </div>
-                                    <c:set var="lastOpenedAttrGrp" value="" />
-                                    </c:if>
-                                    --%>
-
-                                    <%-- Filter context attributes --%>
-                                    <%--<c:if test="${attr.context}">--%>
-
-                                    <%-- New attr group 
-                                    <c:if test="${!empty attr.groupCode && lastOpenedAttrGrp != attr.groupCode}">
-                                    <c:set var="lastOpenedAttrGrp" value="${attr.groupCode}" />
-                                    <div class="col-md-12 sdef-agrp agrp-${lastOpenedAttrGrp}">
-                                        <div class="row">
-                                            <c:set var="agrpTitle" value="${myPage.languageText.getAttrGrpInfo(baseTrKey, st, lastOpenedAttrGrp, 'name', '')}" />
-                                            <c:if test="${!empty agrpTitle}">
-                                            <p class="agrp-title">${fn:escapeXml(agrpTitle)}</p>
-                                            </c:if>
-                                    </c:if>
-                                    --%>
 
                                     <div class="sdef-attr attr-${attr.code}">
                                         <c:set var="attrLabel" value="${myPage.languageText.getAttrInfo(baseTrKey, st, attr, 'name', textSpecialCase)}" />
@@ -272,20 +186,11 @@
 
                                             <c:if test="${myPage.isCurSTDefAttributeRequired(attr)}"><span class="required">*</span></c:if>
 
-                                            <%--<fmt:message key="${baseTrKey}.attr.infosBtnTitle" var="eltTitle" />
-                                            title="${fn:escapeXml(eltTitle)}" HSEC-st-v-attr-cpr--%>
                                             <a href="${myPage.helpUrl}#HSEC-st-${st.code}-attr-${attr.code}" class="attr-help-btn" target="_blank"
                                                     data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="${fn:escapeXml(attrHelp)}">
                                                 <fmt:message key="${baseTrKey}.attr.infosBtn" />&nbsp;<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                                             </a>
 
-                                            <%--
-                                            <fmt:message key="${baseTrKey}.attr.infosBtnTitle" var="eltTitle" />
-                                            <a href="#${attrInfosId}" data-toggle="collapse" title="${fn:escapeXml(eltTitle)}"
-                                                    aria-expanded="false" aria-controls="${attrInfosId}">
-                                                <small><fmt:message key="${baseTrKey}.attr.infosBtn" />&nbsp;<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small>
-                                            </a>
-                                            --%>
                                         </p>
                                         <fmt:message key="${baseTrKey}.attr.flagsGroupLabel" var="eltAttr" />
                                         <div class="btn-group" role="group" aria-label="${fn:escapeXml(eltAttr)}">
@@ -347,20 +252,9 @@
                                         </div>
                                     </div>
 
-                                    <%-- /Filter context attr --%>
-                                    <%--</c:if>--%>
-
-                                    <%-- End of attr group 
-                                    <c:if test="${attrLoopStatus.last && !empty lastOpenedAttrGrp}">
-                                        </div>
-                                    </div>
-                                    <c:set var="lastOpenedAttrGrp" value="" />
-                                    </c:if>
-                                    --%>
                                     </c:forEach>
                                 </div>
                             </div>
-                            <%--</c:if>--%>
                             </c:forEach>
 
                         </div>
@@ -408,8 +302,6 @@
                     </div>
                         
 
-                    <%--<h4><fmt:message key="${baseTrKey}.context.title" /></h4>--%>
-
                     <c:forEach items="${myPage.language.syntagmeTypes}" var="stItem">
                     <c:set var="st" value="${stItem.value}" />
                     <jsp:setProperty name="myPage" property="curST" value="${st}" />
@@ -445,49 +337,7 @@
                                             <fmt:message key="${baseTrKey}.attr.infosBtn" />&nbsp;<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                                         </a>
 
-                                        <%--
-                                        <fmt:message key="${baseTrKey}.attr.infosBtnTitle" var="eltTitle" />
-                                        <a href="#${attrInfosId}" data-toggle="collapse" title="${fn:escapeXml(eltTitle)}"
-                                                aria-expanded="false" aria-controls="${attrInfosId}">
-                                            <small><fmt:message key="${baseTrKey}.attr.infosBtn" />&nbsp;<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></small>
-                                        </a>
-                                        --%>
                                     </p>
-                                    <%--
-                                    <div class="attr-info well well-sm collapse" id="${attrInfosId}">
-                                        <p class="pull-right">
-                                            <a href="${myPage.helpUrl}#st-${st.code}-attr-${attr.code}" target="_blank">
-                                                <small><fmt:message key="${baseTrKey}.attr.detailedHelp" />&nbsp;<span class="glyphicon glyphicon-share" aria-hidden="true"></span></small>
-                                            </a>
-                                        </p>
-                                        <c:if test="${!empty attrHelp}">
-                                        <p class="attr-help">${attrHelp}</p>
-                                        </c:if>
-                                        <dl class="dl-horizontal">
-                                            <c:forEach items="${attr.flags}" var="flag">
-                                            <c:set var="flagLabel" value="${myPage.languageText.getFlagInfo(baseTrKey, st, flag, 'name', textSpecialCase)}" />
-                                            <c:set var="flagHelp" value="${myPage.languageText.getFlagInfo(baseTrKey, st, flag, 'help', textSpecialCase)}" />
-                                            <c:set var="flagEx" value="${myPage.languageText.getFlagEx(baseTrKey, st, flag, textSpecialCase)}" />
-                                            <c:if test="${!empty flagHelp || !empty flagEx}">
-                                            <dt>${flagLabel}</dt>
-                                            <dd>
-                                                <c:if test="${!empty flagHelp}">
-                                                <p>${flagHelp}</p>
-                                                </c:if>
-                                                <c:if test="${!empty flagEx}">
-                                                <p>
-                                                    <fmt:message key="${baseTrKey}.attr.flag.ex" /> 
-                                                    <c:forEach var="curFlagEx" items="${flagEx}">
-                                                    <span class="label label-default">${curFlagEx}</span>
-                                                    </c:forEach>
-                                                </p>
-                                                </c:if>
-                                            </dd>
-                                            </c:if>
-                                            </c:forEach>
-                                        </dl>
-                                    </div>
-                                    --%>
                                     <fmt:message key="${baseTrKey}.attr.flagsGroupLabel" var="eltAttr" />
                                     <div class="btn-group" role="group" aria-label="${fn:escapeXml(eltAttr)}">
                                         <c:forEach items="${attr.flags}" var="flag">
@@ -575,10 +425,6 @@
 </div>
 
 <div class="tpl-selection-popover" style="display: none;">
-<!--    <p class="pull-right">
-                
-        <a href="#" class="cancel-btn">&times;</a>
-    </p>-->
     <p class="select-type-msg">
         <fmt:message key="articleTemplate.edit.selection.create.msg" />
         

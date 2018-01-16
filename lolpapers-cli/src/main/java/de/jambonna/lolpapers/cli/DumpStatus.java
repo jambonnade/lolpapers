@@ -2,7 +2,6 @@ package de.jambonna.lolpapers.cli;
 
 import de.jambonna.lolpapers.core.app.AppException;
 import de.jambonna.lolpapers.core.model.FinalArticle;
-import de.jambonna.lolpapers.core.model.Website;
 import de.jambonna.lolpapers.core.model.WebsiteEntity;
 import java.io.IOException;
 import java.util.List;

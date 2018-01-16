@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
+ * A base class for DAO implementations whether it uses JDBC or Persistence API
  */
 public abstract class DaoAbstract implements Dao {
     private App app;

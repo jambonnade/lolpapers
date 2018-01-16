@@ -33,8 +33,6 @@ public abstract class LanguageAbstract implements Language {
     
     private final Locale locale;
     private Map<String, SyntagmeType> syntagmeTypes;
-//    private transient SyntagmeDefinitionCondition singleWordSDefCondition;
-//    private transient SyntagmeDefinitionCondition multipleWordsSDefCondition;
     private transient ContentProcessor contentProcessor;
     private transient Pattern extractWordsPattern;
     private transient Pattern sentenceEndMarkFollowingWordPattern;
@@ -119,17 +117,14 @@ public abstract class LanguageAbstract implements Language {
         return new ContentProcessor(this);
     }
     
-//    @Override
     public String getSentenceEndingChars() {
         return ".?!";
     }
     
-//    @Override
     public String getWordREChars() {
         return "\\p{Ll}\\p{Lm}\\p{Lo}\\p{Lt}\\p{Lu}\\d";
     }
     
-//    @Override
     public String getWordRE() {
         return "[" + getWordREChars() + "][" + getWordREChars() + "-·]*";
     }
@@ -142,21 +137,6 @@ public abstract class LanguageAbstract implements Language {
         return getWordRE() + getNonWordSequenceRE() + getWordRE();
     }
     
-//    protected SyntagmeDefinitionCondition getSingleWordSDefCondition() {
-//        if (singleWordSDefCondition == null) {
-//            singleWordSDefCondition = new SyntagmeDefinitionCondition.TextMatch("^" + getWordRE() + "$");
-//        }
-//        return singleWordSDefCondition;
-//    }
-//    
-//    protected SyntagmeDefinitionCondition getMultipleWordsSDefCondition() {
-//        if (multipleWordsSDefCondition == null) {
-//            multipleWordsSDefCondition = 
-//                    new SyntagmeDefinitionCondition.TextMatch("^" + getMultipleWordsRE());
-//        }
-//        return multipleWordsSDefCondition;
-//    }
-
     
     @Override
     public List<TextRange> extractWords(CharSequence text) {
@@ -303,239 +283,6 @@ public abstract class LanguageAbstract implements Language {
     }
 
 
-//    @Override
-//    public Element getHTMLSyntagmeMainDescription(SyntagmeDefinitionAbstract sd) {
-//        Element root = Document.createShell("").body();
-//        
-//        SyntagmeDescriptionCreationCtx ctx = new SyntagmeDescriptionCreationCtx(this, sd);
-//        ctx.setContentElement(root);
-//        
-//        addSyntagmeMainDescription(ctx);
-//        
-//        return root;
-//    }
-//
-//    protected abstract void addSyntagmeMainDescription(SyntagmeDescriptionCreationCtx ctx);
-//    
-//    protected void addSyntagmeDescriptionAttrFlags(SyntagmeDescriptionCreationCtx ctx, 
-//            String attrGroup, String beforeText, Collection<SyntagmeFlag> flags) {
-//        if (flags.isEmpty()) {
-//            return;
-//        }
-//        
-//        addSyntagmeDescriptionAttrBeginText(ctx, attrGroup, beforeText);
-//        
-//        boolean first = true;
-//        for (SyntagmeFlag flag : flags) {
-//            if (!first) {
-//                addSyntagmeDescriptionText(ctx, ctx.getFlagTextSeparator());
-//            }
-//            String flagTextParts[] = ctx.getFlagLabelParts(flag);
-//            addSyntagmeDescriptionText(ctx, flagTextParts[0]);
-//            if (ctx.getContentElement() != null) {
-//                Element el = ctx.newElement("em").attr("class", "flag flag-" + flag.getCode());
-//                el.text(flagTextParts[1]);
-//                ctx.getContentElement().appendChild(el);
-//            }
-//            addSyntagmeDescriptionText(ctx, flagTextParts[2]);
-//            first = false;
-//        }
-//    }
-//    
-//    protected void addSyntagmeDescriptionAttrCustom(SyntagmeDescriptionCreationCtx ctx,
-//            String attrGroup, String beforeText, String text, String help) {
-//        addSyntagmeDescriptionAttrBeginText(ctx, attrGroup, beforeText);
-//
-//        if (ctx.getContentElement() != null) {
-//            Element el = ctx.newElement("em").attr("class", "attr-custom");
-//            el.dataset().put("help", help);
-//            el.text(text);
-//            ctx.getContentElement().appendChild(el);
-//        }
-//    }
-//    
-//    protected void addSyntagmeDescriptionAttrBeginText(SyntagmeDescriptionCreationCtx ctx, String attrGroup, String text) {
-//        if (ctx.getLastAttrGroup() == null || ctx.getLastAttrGroup().equals(attrGroup)) {
-//            addSyntagmeDescriptionText(ctx, " ");
-//        } else {
-//            addSyntagmeDescriptionText(ctx, ctx.getAttrTextSeparator());
-//        }
-//        ctx.setLastAttrGroup(attrGroup);
-//        
-//        if (text != null) {
-//            addSyntagmeDescriptionText(ctx, text);
-//        }
-//    }
-//
-//    protected void addSyntagmeDescriptionText(SyntagmeDescriptionCreationCtx ctx, String text) {
-//        if (ctx.getContentElement() != null) {
-//            ctx.getContentElement().appendText(text);
-//        }
-//    }
-//    
-//    protected void addSyntagmeDescriptionType(SyntagmeDescriptionCreationCtx ctx, String label) {
-//        if (ctx.getContentElement() != null) {
-//            Element el = ctx.newElement("em").attr("class", "st st-" + ctx.getSd().getType().getCode());
-//            el.text(label);
-//            ctx.getContentElement().appendChild(el);
-//        }
-//    }
-//
-//    
-//    protected static class SyntagmeDescriptionCreationCtx {
-//        private final LanguageAbstract language;
-//        private final SyntagmeDefinitionAbstract sd;
-//        private final Map<String, String[]> flagLabelsParts;
-//        private Element contentElement;
-////        private final Map<String, Set<SyntagmeFlag>> specificFlags;
-////        private final Set<String> outputAttrs;
-////        private final Set<String> customInfo;
-////        private boolean firstInAttr;
-//        private boolean attrSepNeeded;
-//        private String lastAttrGroup;
-//        private String attrTextSeparator;
-//        private String flagTextSeparator;
-//
-////        private final Pattern aze;
-//
-//        public SyntagmeDescriptionCreationCtx(LanguageAbstract language, SyntagmeDefinitionAbstract sd) {
-//            this.language = language;
-//            this.sd = sd;
-////            this.root = root;
-////            specificFlags = new HashMap<>();
-////            outputAttrs = new HashSet<>();
-////            customInfo = new HashSet<>();
-//            flagLabelsParts = new HashMap<>();
-//            
-////            for (SyntagmeAttribute attr : sd.getType().getAttributes().values()) {
-////                Set<SyntagmeFlag> specificFlagsOn = sd.getSpecificAttributeFlagsOn(attr);
-////                specificFlags.put(attr.getCode(), Collections.unmodifiableSet(specificFlagsOn));
-////            }
-//            attrTextSeparator = ", ";
-//            flagTextSeparator = " / ";
-//        }
-//        
-//        public SyntagmeDefinitionAbstract getSd() {
-//            return sd;
-//        }
-//
-//        public Set<SyntagmeFlag> getSpecificFlags(String attrCode) {
-//            try {
-//                SyntagmeAttribute attr = getSd().getAttribute(attrCode);
-//                return getSd().getSpecificAttributeFlagsOn(attr);
-//            } catch (IllegalArgumentException ex) {
-//            }
-//            return Collections.emptySet();
-//        }
-//        public SyntagmeFlag getSpecificFlag(String attrCode) {
-//            Set<SyntagmeFlag> flags = getSpecificFlags(attrCode);
-//            return flags.size() == 1 ? flags.iterator().next() : null;
-//        }
-//        
-//        public void setContentElement(Element contentElement) {
-//            this.contentElement = contentElement;
-//        }
-//
-//        public Element getContentElement() {
-//            return contentElement;
-//        }
-//        public Element newElement(String tag) {
-//            Element baseEl = getContentElement();
-//            if (baseEl == null) {
-//                throw new IllegalStateException("No content element");
-//            }
-//            return baseEl.ownerDocument().createElement(tag);
-//        }
-//        
-////        public void setFlagLabel(String flagCode, String useCase, String flagText) {
-////            String key = flagCode;
-////            if (useCase != null) {
-////                key += "-" + useCase;
-////            }
-////            flagLabels.put(key, flagText);
-////        }
-////        
-////        public void setFlagLabel(String flagCode, String flagText) {
-////            setFlagLabel(flagCode, null, flagText);
-////        }
-////        
-////        public String getFlagLabel(String flagCode, String useCase) {
-////            String key = flagCode;
-////            if (useCase != null) {
-////                key += "-" + useCase;
-////            }
-////            return flagLabels.get(key);
-////        }
-//        
-//        public void setFlagLabel(String flagCode, String before, String label, String after) {
-//            flagLabelsParts.put(flagCode, new String[] { before, label, after });
-//        }
-//        public void setFlagLabel(String flagCode, String before, String label) {
-//            setFlagLabel(flagCode, before, label, "");
-//        }
-//        public void setFlagLabel(String flagCode, String label) {
-//            setFlagLabel(flagCode, "", label);
-//        }
-//        
-//        public String[] getFlagLabelParts(SyntagmeFlag flag) {
-//            String[] labelParts = flagLabelsParts.get(flag.getCode());
-//            if (labelParts == null) {
-//                String label = flag.getStandaloneGeneralLabel().toLowerCase(language.getLocale());
-//                labelParts = new String[] { "", label, "" };
-//            }
-//            if (labelParts.length != 3 || labelParts[0] == null 
-//                    || labelParts[1] == null || labelParts[2] == null) {
-//                throw new IllegalStateException("Invalid label parts");
-//            }
-//            return labelParts;
-//        }
-//        
-//
-//        public String getLastAttrGroup() {        
-//            return lastAttrGroup;
-//        }
-//
-////        public Set<SyntagmeFlag> getSpecificFlags(String attrCode) {
-////            return specificFlags.get(attrCode);
-////        }
-////        public SyntagmeFlag getSpecificFlag(String attrCode) {
-////            Set<SyntagmeFlag> flags = getSpecificFlags(attrCode);
-////            if (flags.size() == 1) {
-////                return flags.iterator().next();
-////            }
-////            return null;
-////        }
-////        public boolean isAttrSepNeeded() {
-////            return attrSepNeeded;
-////        }
-////
-////        public void setAttrSepNeeded(boolean attrSepNeeded) {
-////            this.attrSepNeeded = attrSepNeeded;
-////        }
-//        public void setLastAttrGroup(String lastAttrGroup) {        
-//            this.lastAttrGroup = lastAttrGroup;
-//        }
-//
-//        public String getAttrTextSeparator() {
-//            return attrTextSeparator;
-//        }
-//
-//        public void setAttrTextSeparator(String attrTextSeparator) {
-//            this.attrTextSeparator = attrTextSeparator;
-//        }
-//
-//        public String getFlagTextSeparator() {
-//            return flagTextSeparator;
-//        }
-//
-//        public void setFlagTextSeparator(String flagTextSeparator) {
-//            this.flagTextSeparator = flagTextSeparator;
-//        }
-//        
-//        
-//    }
-//    
-
     @Override
     public Element getSDefReplacementHTMLInfo(SyntagmeReplacementDefinition sdr) {
         Element listEl = new Element("ul");
@@ -588,11 +335,6 @@ public abstract class LanguageAbstract implements Language {
         ctx.setNewSentence(true);
     }
 
-//    protected void addSDefAttrHTMLInfo(Element container, String attrCode, String text) {
-//        Element el = new Element("em").attr("class", "attr attr-" + attrCode);
-//        el.text(text);
-//        container.appendChild(el);
-//    }
     
     protected String capitalizeHTMLInfoText(SDefHTMLInfoCtx ctx, String text) {
         if (ctx.isNewSentence()) {
@@ -669,7 +411,6 @@ public abstract class LanguageAbstract implements Language {
     protected static class SDefHTMLInfoCtx {
         private static final Logger logger = LoggerFactory.getLogger(SDefHTMLInfoCtx.class);
 
-//        private final LanguageAbstract language;
         private final SyntagmeDefinition sd;
         private final SyntagmeReplacementDefinition sdr;
         private final Element listEl;
@@ -679,31 +420,8 @@ public abstract class LanguageAbstract implements Language {
         private Element curItemEl;
         private boolean newSentence;
         private String nextSeparator;
-        private boolean newSubItem;
 
-//        public SDefHTMLInfoCtx(LanguageAbstract language, 
-//                SyntagmeDefinition sd, SyntagmeReplacementDefinition sdr, Element listEl) {
-//            this.language = language;
-//            this.sd = sd;
-//            this.sdr = sdr;
-//            this.listEl = listEl;
-//            flagLabels = new HashMap<>();
-//            
-//            flagOptionSeparator = ", ";
-//            flagOptionSeparatorLast = " or ";
-//        }
-//        
-//        public SDefHTMLInfoCtx(LanguageAbstract language, SyntagmeDefinition sd, Element listEl) {
-//            this(language, sd, null, listEl);
-//        }
-//        
-//        public SDefHTMLInfoCtx(LanguageAbstract language, SyntagmeReplacementDefinition sdr, Element listEl) {
-//            this(language, null, sdr, listEl);
-//        }
-//
-//        public LanguageAbstract getLanguage() {
-//            return language;
-//        }
+        
         public SDefHTMLInfoCtx(SyntagmeDefinition sd, SyntagmeReplacementDefinition sdr, Element listEl) {
             this.sd = sd;
             this.sdr = sdr;
@@ -779,14 +497,6 @@ public abstract class LanguageAbstract implements Language {
             }
             return result;
         }
-//        public String getFlagLabel(String flagCode, boolean ucFirst) {
-//            String result = getFlagLabel(flagCode);
-//            if (ucFirst) {
-//                Locale l = getSdef().getType().getLanguage().getLocale();
-//                result = result.substring(0, 1).toUpperCase(l) + result.substring(1);
-//            }
-//            return result;
-//        }
 
         public void setFlagOptionSeparator(String flagOptionSeparator) {
             this.flagOptionSeparator = flagOptionSeparator;

@@ -4,20 +4,15 @@ import de.jambonna.lolpapers.core.validation.BeanValidator;
 import java.util.Arrays;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
 import javax.validation.constraints.Size;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 /**
- *
+ * Final article (main content entity type).
  */
 @Entity
 public class FinalArticle extends FinalContent {
     
     private String articleTitle;
-//    @Transient
-//    private String articleTitleText;
     private boolean articleWithDescription;
     private String articleDescription;
     private String articleContent;
@@ -33,21 +28,8 @@ public class FinalArticle extends FinalContent {
 
     public void setArticleTitle(String articleTitle) {
         this.articleTitle = articleTitle;
-//        articleTitleText = null;
     }
     
-//    public String getArticleTitleText() {
-//        String text = articleTitleText;
-//        if (text == null) {
-//            String titleHtml = getArticleTitle();
-//            if (titleHtml != null) {
-//                Document doc = Jsoup.parseBodyFragment(titleHtml);
-//                text = doc.body().text();
-//                articleTitleText = text;
-//            }
-//        }
-//        return text;
-//    }
 
     public boolean isArticleWithDescription() {
         return articleWithDescription;

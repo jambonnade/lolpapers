@@ -14,7 +14,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /**
- *
+ * Article template entity type, will be used to create FinalArticle entities
  */
 @Entity
 public class ArticleTemplate extends ContentTemplate {

@@ -39,15 +39,15 @@ ENV CATALINA_OPTS="\
 ENV PATH $LOLPAPERS_STUFF_PATH/bin:$PATH
 
 
+ADD http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.42/mysql-connector-java-5.1.42.jar "$CATALINA_HOME/lib/"
+RUN apk update; apk add mysql-client
+
 COPY stuff "$LOLPAPERS_STUFF_PATH"
 RUN chmod +x "$LOLPAPERS_STUFF_PATH/bin/"*.sh
 
 COPY server.xml "$CATALINA_HOME/conf/"
 COPY lolpapers-context.xml "$CATALINA_HOME/conf/Catalina/localhost/lolpapers.xml"
 COPY lolpapers.war "$CATALINA_HOME/webapps/lolpapers.war"
-
-ADD http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.42/mysql-connector-java-5.1.42.jar "$CATALINA_HOME/lib/"
-RUN apk update; apk add mysql-client
 
 CMD [ "custom-init.sh", "catalina.sh", "run" ]
 

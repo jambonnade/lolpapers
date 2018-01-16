@@ -934,50 +934,6 @@
     };
     
     
-//    function ReplacementSyntagmeDefinition(st, possibleFlags) {
-//        this._possibleFlags = possibleFlags;
-//        
-//        SyntagmeDefinition.call(this, st);
-//        
-//        this._presetChoices();
-//    }
-//    makeInherit(ReplacementSyntagmeDefinition, SyntagmeDefinition);
-//    p = ReplacementSyntagmeDefinition.prototype;
-//
-//    p.getAttributeFlags = function (attr) {
-//        var flags = [ ];
-//        var k;
-//        var flag;
-//        
-//        for (k = 0; k < attr.flags.length; k++) {
-//            flag = attr.flags[k];
-//            // Note : "definition only" flags are all available
-//            if (attr.definitionOnly || inArray(flag.code, this._possibleFlags)) {
-//                flags.push(flag);
-//            }
-//        }
-//        return flags;
-//    };
-//    
-//    p._presetChoices = function () {
-//        var k;
-//        var attr;
-//        var f;
-//        var flags;
-//        
-//        var chosenFlags = [ ];
-//        
-//        // Auto-selects one-choice attributes
-//        for (k = 0; k < this._attributeCodes.length; k++) {
-//            attr = this.getAttribute(this._attributeCodes[k]);
-//            flags = this.getAttributeFlags(attr);
-//            if (flags.length === 1) {
-//                chosenFlags.push(flags[0].code);
-//            }
-//        }
-//        
-//        this.resetChosenFlags(null, chosenFlags);
-//    };
     
     
     
@@ -1037,7 +993,7 @@
         var selectionPopoverUsePlItemHtml = $('.tpl-selection-popover-use-placeholder-item', mainContainer).remove().html();
         var selectionPopoverSelector = '.selection-popover';
         var selectionPopoverBaseElt = null;
-//        var stChoicePopupElt = $('.template-edit-st-choice', mainContainer);
+
         
         var curPlaceholder = null;
         var placeholderEltSelector = '.placeholder';
@@ -1423,12 +1379,6 @@
             }
         }
         
-//        function updateCurrentlySelectedPlaceholderUI() {
-//            $(placeholderEltSelector).removeClass('current');
-//            if (curPlaceholder) {
-//                getPlaceholderElts(curPlaceholder.reference).addClass('current');
-//            }
-//        }
         
         function updatePlaceholdersUI() {
             var k;
@@ -1692,7 +1642,6 @@
                     popoverContainerElt = getSelectionPopoverElt();
                 }
                 
-//                html = selectionPopoverHtml.replace(/\{text\}/g, curSelection.text);
                 
                 
                 
@@ -1710,15 +1659,6 @@
                     }
                 }
                 
-                
-                
-//                wordElts = $();
-//                for (word = curSelection.from; word <= curSelection.to; word++) {
-//                    wordElts = wordElts.add(getWordElt(word, containersElts));
-//                }
-//                positionPopupUnder(stChoicePopupElt, wordElts);
-//                stChoicePopupElt.addClass('opened');
-                
             } else {
                 if (selectionPopoverBaseElt) {
                     selectionPopoverBaseElt.popover('destroy');
@@ -1727,57 +1667,6 @@
             }
         }
         
-//        function positionPopupUnder(popupElt, relatedElts) {
-//            var k;
-//            var elt;
-//            var position;
-//            var right;
-//            var bottom;
-//            var minLeft;
-//            var maxLeft;
-//            var maxTop;
-//            var popupWidth;
-//            var mainWidth;
-//            var middleLeft;
-//            var popupLeft;
-//
-//            
-//            if (relatedElts.length > 0) {
-//                minLeft = null;
-//                maxLeft = null;
-//                maxTop = null;
-//                for (k = 0; k < relatedElts.length; k++) {
-//                    elt = relatedElts.eq(k);
-//                    position = elt.position();
-//                    right = position.left + elt.width();
-//                    bottom = position.top + elt.height();
-//                    if (minLeft === null || position.left < minLeft) {
-//                        minLeft = position.left;
-//                    }
-//                    if (maxLeft === null || right > maxLeft) {
-//                        maxLeft = right;
-//                    }
-//                    if (maxTop === null || bottom > maxTop) {
-//                        maxTop = bottom;
-//                    }
-//                }
-//
-//                middleLeft = (minLeft + maxLeft) / 2;
-//                popupWidth = popupElt.width();
-//                mainWidth = mainContainer.width();
-//                popupLeft = middleLeft - popupWidth / 2;
-//                // Avoids overflowing right
-//                if (popupLeft + popupWidth > mainWidth) {
-//                    popupLeft = mainWidth - popupWidth;
-//                }
-//                // Avoids overflowing left (most important)
-//                if (popupLeft < 0) {
-//                    popupLeft = 0;
-//                }
-//                popupElt.css('left', Math.round(popupLeft) + 'px');
-//                popupElt.css('top', maxTop + 'px');
-//            }
-//        }
         
         function getCurSelectionSDef(stCode) {
             var sd;
@@ -1905,7 +1794,6 @@
             }
             
             curPlaceholder = getPlaceholder(reference);
-//            updateCurrentlySelectedPlaceholderUI();
             updateCurPlaceholderUI();
         }
         
@@ -1992,10 +1880,7 @@
                 
                 updateCtxSamplesUI();
                 
-                
-//                placeholderElt = getPlaceholderElt(curPlaceholder.reference);
-//                positionPopupUnder(placeholderPopupElt, placeholderElt);
-                
+                                
                 updatePlaceholderPopupArticleContent();
                 focusPlaceholderPopupArticleContent();
                 
@@ -2264,23 +2149,9 @@
             return selectors.length > 0 ? getTextBlockElts(context).filter(selectors.join(',')) : $();
         }
         
-//        function getTextBlockElt(blockId) {
-//            return textBlocksElts.filter('[data-blkid=' + blockId + ']').first();
-//        }
-        
-//        function getRemovedBlockElts() {
-//            return $('.removed' + textBlockSelector, containersElts);
-//        }
         function getCurrentlyRemovedBlockElts() {
             return $(textBlockSelector  + '.removed', containersElts);
         }
-//        function getNonRemovedBlockElts() {
-//            return $(textBlockSelector  + ':not(.removed)', containersElts);
-//        }
-
-//        function getNonRemovedWords() {
-//            return $(wordEltSelector, getNonRemovedBlockElts());
-//        }
         
         function removePlaceholdersInside(context) {
             var k;
@@ -2708,19 +2579,6 @@
             flagBtnsContainer.toggle();
             detailedAttrContainer.toggle();
         });
-//        placeholderPopupElt.find('.attr-info').each(function () {
-//            var helpContainer = $(this);
-//            var id;
-//            
-//            id = helpContainer.attr('id');
-//            if (id && helpContainer.find('dd').length === 0 
-//                        && helpContainer.find('.attr-help').length === 0) {
-//                placeholderPopupElt.find('a[href="#' + id + '"]').remove();
-//                helpContainer.remove();
-//            }
-//        });
-//        placeholderPopupElt.find('[data-toggle="popover"]').popover({ 'container': placeholderPopupElt });
-//        $('[data-toggle="tooltip"]', mainContainer).tooltip();
         
         
         eraseModeMenuElt.find('a').click(function (e) {
@@ -2803,11 +2661,6 @@
         var onSave = false;
         
         var langData = null;
-//        var fillTextHelpData = null;
-//        var fillTextPopoverTplWithEx = 
-//                $('.tpl-fill-text-popover-content-with-ex', container).remove().html();
-//        var fillTextPopoverExItemTpl = 
-//                $('.tpl-fill-text-popover-content-ex', container).remove().html();
         var sType = null;
         var sDef = null;
         var textMaxLg = container.data('textMaxLg');
@@ -2820,22 +2673,20 @@
         
         function setupFillTextMsg() {
             var fillTextElt;
-//            var baseStKey;
             var k;
             var attributeCodes;
             var attr;
             var flags;
             var f;
             var flagCode;
+            var elt;
+            var detailsContainer;
             
             fillTextElt = container.find('.fill-text-msg');
-//            baseStKey = 'st.' + sDef.getSyntagmeType().code;
-            var elt;
             elt = fillTextElt.find('.st');
             elt.addClass('colored-st');
             setupFillTextPopover(elt, 'st');
             
-            var detailsContainer;
             detailsContainer = container.find('.fill-text-details');
             
             attributeCodes = sDef.getAttributeCodes();
@@ -2872,25 +2723,6 @@
 
                 contentContainer.remove();
             }
-//            help = fillTextHelpData[baseKey + '.help'];
-//            ex = fillTextHelpData[baseKey + '.ex'];
-//            
-//            if (help || ex) {
-//                popoverContent = help;
-//                if (ex && ex.length > 0) {
-//                    popoverContent = fillTextPopoverTplWithEx
-//                            .replace(/\{text\}/g, help)
-//                            .replace(/\{ex\}/g, ex[0]);
-//                }
-//
-//                elt.popover({
-//                    'trigger': 'hover',
-//                    'placement': 'top',
-//                    'html': true,
-//                    'content': popoverContent
-//                })
-//                .addClass('with-help');
-//            }
         }
         
         function updateUI() {
@@ -2926,21 +2758,9 @@
             varValue = sDef.getCtxPrefix();
             varContainer = container.find('.ctx-prefix');
             varContainer.text(varValue ? varValue : '');
-//            if (varValue && varValue.length > 0) {
-//                varContainer.text(varValue);
-//                varContainer.show();
-//            } else {
-//                varContainer.hide();
-//            }
             varValue = sDef.getCtxSuffix();
             varContainer = container.find('.ctx-suffix');
             varContainer.text(varValue ? varValue : '');
-//            if (varValue && varValue.length > 0) {
-//                varContainer.text(varValue);
-//                varContainer.show();
-//            } else {
-//                varContainer.hide();
-//            }
             
             samplesText = sDef.getText();
             if (samplesText.length === 0) {
@@ -3100,15 +2920,8 @@
                 
                 // Expose for testing
                 window.sDef = sDef;
-//                window.fillTextHelpData = fillTextHelpData;
             }
             
-//            if (container.data('sdefTooltipsDisabled') !== 'on') {
-//                $('[data-toggle="popover"]', sDefContainer).popover({
-//                    'container': sDefContainer
-//                });
-//            }
-
         })();
         
         userTextInput.on('change keyup', function (e) {

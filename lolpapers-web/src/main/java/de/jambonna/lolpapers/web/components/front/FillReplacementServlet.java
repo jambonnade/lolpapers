@@ -52,15 +52,9 @@ public class FillReplacementServlet extends FrontServletAbstract {
         String textParam = rc.getParam("text");
         String flagsParam = rc.getParam("flags");
 
-//        Collection<String> inputFlags = Collections.emptyList();
-//        if (flagsParam != null && flagsParam.length() > 0) {
-//            String[] tabInputFlags = flagsParam.split(",");
-//            inputFlags = Arrays.asList(tabInputFlags);
-//        }
         tp.setReplacementDefinitionFlags(flagsParam);
         tp.setReplacementText(textParam);
         tp.normalizeReplacementText();
-//        tp.setReplacement(textParam, inputFlags);
         
         try {
             tp.validateReplacement();
@@ -71,7 +65,6 @@ public class FillReplacementServlet extends FrontServletAbstract {
             return;
         }
         
-//        tp.updateSerializedReplacement();
         tp.setReplacementAt(new Date());
         
         user.setReplacementCount(user.getReplacementCount() + 1);

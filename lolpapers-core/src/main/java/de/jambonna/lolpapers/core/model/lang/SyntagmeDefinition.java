@@ -29,7 +29,6 @@ public class SyntagmeDefinition extends SyntagmeDefinitionAbstract {
     
     private static final Logger logger = LoggerFactory.getLogger(SyntagmeDefinition.class);
     
-//    private SyntagmeDefinitionContext contextDefinition;
     private SyntagmeReplacementDefinition replacementDefinition;
     private SyntagmeDefinition origDefinition;
     private String text;
@@ -91,10 +90,6 @@ public class SyntagmeDefinition extends SyntagmeDefinitionAbstract {
         return true;
     }
 
-//    @Override
-//    public boolean isAttributeRequired(SyntagmeAttribute attr) {
-//        return attr.isRequired() && (attr.isContext() || attr.isDefinitionOnly());
-//    }
 
     
     
@@ -215,26 +210,6 @@ public class SyntagmeDefinition extends SyntagmeDefinitionAbstract {
             }
 
             
-//            attributes = update.getCtxAttributesToDisable();
-//            if (attributes != null) {
-//                for (String attr : attributes) {
-//                    getContextDefinition().disableAttributeFlags(attr);
-//                }
-//            }
-//            attributes = update.getCtxAttributesToEnable();
-//            if (attributes != null) {
-//                for (String attr : attributes) {
-//                    getContextDefinition().enableAllAttributeFlags(attr);
-//                }
-//            }
-//            flags = update.getCtxFlagsToLimitTo();
-//            if (flags != null) {
-//                getContextDefinition().limitAttributeFlagsTo(flags);
-//            }
-//            flags = update.getCtxAttributeFlagsToSetTo();
-//            if (flags != null) {
-//                getContextDefinition().setAttributeFlagsTo(flags);
-//            }
 
             if (update.getFlagsToSelect() != null) {
                 if (flagsToSelect == null) {
@@ -435,41 +410,12 @@ public class SyntagmeDefinition extends SyntagmeDefinitionAbstract {
                 " [R] " + getReplacementDefinition().getStringRepresentation();
     }
 
-//    public SyntagmeDefinitionContext getContextDefinition() {
-//        if (contextDefinition == null) {
-//            contextDefinition = new SyntagmeDefinitionContext(getType());
-//        }
-//        return contextDefinition;
-//    }
-
-
-//    public void initReplacementDefinition() {
-//        replacementDefinition = new SyntagmeReplacementDefinition(this);
-//    }
-    
-//    public SyntagmeReplacementDefinition getReplacementDefinition() {
-//        return replacementDefinition;
-//    }
-//    public SyntagmeReplacementDefinition getSureReplacementDefinition() {
-//        SyntagmeReplacementDefinition srd = getReplacementDefinition();
-//        if (srd == null) {
-//            throw new IllegalStateException("No replacement");
-//        }
-//        return srd;
-//    }
     public SyntagmeReplacementDefinition getReplacementDefinition() {
         if (replacementDefinition == null) {
             replacementDefinition = new SyntagmeReplacementDefinition(this);
         }
         return replacementDefinition;
     }
-
-//    public void setReplacementDefinition(SyntagmeReplacementDefinition replacement) {
-//        if (replacement != null && !replacement.getType().equals(getType())) {
-//            throw new IllegalArgumentException("Invalid replacement");
-//        }
-//        this.replacementDefinition = replacement;
-//    }
 
     public SyntagmeDefinition getOrigDefinition() {
         return origDefinition;
@@ -510,24 +456,6 @@ public class SyntagmeDefinition extends SyntagmeDefinitionAbstract {
         }
         getReplacementDefinition().setFromDefinitionInfo(info);
     }
-    
-//    public static SyntagmeDefinition unserialize(
-//            String definition, String replDefinition, Language language) 
-//            throws SyntagmeUnserializeException {
-//        DefinitionInfo info = parseSerializedDefinition(definition, language);
-//        SyntagmeDefinition sd = new SyntagmeDefinition(info.getStype());
-//        sd.setFromDefinitionInfo(info);
-//        
-//        if (replDefinition != null && replDefinition.length() > 0) {
-//            DefinitionInfo infoRepl = parseSerializedDefinition(replDefinition, language);
-//            if (!infoRepl.getStype().equals(sd.getType())) {
-//                throw new SyntagmeUnserializeException("invalid-repl-type", "Invalid repl definition type");
-//            }
-//            SyntagmeReplacementDefinition sdr = sd.getReplacementDefinition();
-//            sdr.setFromDefinitionInfo(infoRepl);
-//        }
-//        return sd;
-//    }
     
     
 }

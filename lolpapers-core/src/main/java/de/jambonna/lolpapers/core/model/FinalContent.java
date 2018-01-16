@@ -27,9 +27,6 @@ public abstract class FinalContent extends ModelAbstract {
     @Id
     private Long finalContentId;
     
-//    @Version
-//    private Long versionNumber;
-    
     @ManyToOne
     @JoinColumn(name = "baseContentId")
     private BaseContent baseContent;
@@ -37,9 +34,6 @@ public abstract class FinalContent extends ModelAbstract {
     @ManyToOne
     @JoinColumn(name = "contentTemplateId")
     private ContentTemplate contentTemplate;
-    
-//    @Transient
-//    private boolean contentTemplateToSave;
     
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
@@ -90,13 +84,6 @@ public abstract class FinalContent extends ModelAbstract {
         setBaseContent(contentTemplate.getBaseContent());
     }
 
-//    public boolean isContentTemplateToSave() {
-//        return contentTemplateToSave;
-//    }
-//
-//    public void setContentTemplateToSave(boolean contentTemplateToSave) {
-//        this.contentTemplateToSave = contentTemplateToSave;
-//    }
 
     public Date getCreatedAt() {
         return createdAt;

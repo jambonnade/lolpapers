@@ -4,7 +4,7 @@
 
     <groupId>de.jambonna</groupId>
     <artifactId>lolpapers-web</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>war</packaging>
 
     <name>lolpapers-web</name>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>de.jambonna</groupId>
             <artifactId>lolpapers-core</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>

@@ -120,17 +120,6 @@
 
 
 
-<!--<p>La fenêtre d'infos sur l'emplacement a pour but de définir par quoi le texte de l'emplacement peut être remplacé. 
-    Pour cela, il est demandé de renseigner les infos dans les sections <strong><fmt:message key="articleTemplate.edit.placeholderModal.context.title" /></strong> et <strong><fmt:message key="articleTemplate.edit.placeholderModal.replacement.title" /></strong>.</p>
-<p>Le texte remplaçant (tout comme le texte d'origine) est défini par son contexte (le texte autour) ; 
-    les choses importantes et formalisables (comme ce qui impacte les accords) sont demandées dans la section <strong><fmt:message key="articleTemplate.edit.placeholderModal.context.title" /></strong>.
-    Pour le reste (ce qui est difficilement formalisable ou résulte d'un choix personnel), il faut définir les caractéristiques possibles du remplacement dans la section <strong><fmt:message key="articleTemplate.edit.placeholderModal.replacement.title" /></strong>.</p>
-
-
-<p>Il est proposé de renseigner optionnellement la nature du texte d'origine (section <strong><fmt:message key="articleTemplate.edit.placeholderModal.definition.title" /></strong>). Définir le texte d'origine pré-configure le remplacement (un texte de telle nature est au moins remplaçable par un texte de même nature).
-    Ce n'est pas nécessaire de le faire mais vous pouvez donc configurer le remplacement via la définition du texte d'origine si ça semble plus facile. Note : si vous faites cela, attention à ne pas renseigner de fausse info dans la définition (une caractéristique qu'on veut pour le remplacement mais qui ne correspond pas au texte d'origine).</p>-->
-
-
 <h4 class="help-title">
     <span class="help-anchor" id="HSEC-prep-article-placeholders-reusable">&nbsp;</span>
     <a href="#HSEC-prep-article-placeholders-reusable"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>Réutilisable</a>

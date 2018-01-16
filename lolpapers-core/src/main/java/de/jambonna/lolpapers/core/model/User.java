@@ -60,14 +60,6 @@ public class User extends ModelAbstract {
     @Transient
     private boolean toSave;
     
-//    @ManyToMany
-//    @JoinTable(
-//        name = "UserBaseContent",
-//        joinColumns = @JoinColumn(name = "userId"),
-//        inverseJoinColumns = @JoinColumn(name = "baseContentId")
-//    )
-//    @OrderColumn(name = "position")
-//    private final List<BaseContent> baseContentList = new ArrayList<>();
 
     public static User newUser(String screenName, App app) throws UserException {
         User user = new User();
@@ -362,11 +354,6 @@ public class User extends ModelAbstract {
     public void takePlaceholderToFill(TemplatePlaceholder tp) {
         tp.setReplacementBy(this);
         tp.setReplacementStartedAt(new Date());
-
-//        // Count this as a replacement even if replacement not yet completed
-//        replacementCount++;
-//        // User has to be saved during placeholder save
-//        setToSave(true);
     }
 
 
