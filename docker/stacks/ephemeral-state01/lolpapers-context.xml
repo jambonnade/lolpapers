@@ -1,0 +1,12 @@
+<Context sessionCookiePath="/lolpapers/">
+	<Resource name="jdbc/lolpapersDB" auth="Container" type="javax.sql.DataSource"
+			maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+			username="${de.jambonna.lolpapers.conf.datasource.username}"
+			password="${de.jambonna.lolpapers.conf.datasource.password}"
+			url="${de.jambonna.lolpapers.conf.datasource.url}"
+			driverClassName="com.mysql.jdbc.Driver" />
+	<Manager pathname="${de.jambonna.lolpapers.conf.app.varPath}/sessions.ser" />
+	
+	<Parameter name="de.jambonna.lolpapers.web.devKey" value="${de.jambonna.lolpapers.web.devKey}" />
+	<Parameter name="de.jambonna.lolpapers.web.assetsVer" value="${de.jambonna.lolpapers.web.assetsVer}" />
+</Context>

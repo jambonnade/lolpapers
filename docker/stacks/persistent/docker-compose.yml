@@ -1,0 +1,42 @@
+version: "3"
+services:
+  tomcat:
+    image: jambonnade/lolpapers-tomcat
+    deploy:
+      mode: global
+    ports:
+      - 8080:8080
+    volumes:
+      - ./tomcat-var/log:/usr/local/tomcat/logs
+      - ./tomcat-var/lolpapers:/var/local/lolpapers
+#    environment:
+#      # When using the reverse proxy (note : need to add this domain to /etc/hosts)
+#      LOLPAPERS_BASE_URL: "http://lolpapers.local.jambonna.de/"
+#      LOLPAPERS_BASE_PATH: /
+
+  mysql:
+    image: mysql:5.7
+    deploy:
+      mode: global
+#    ports:
+#      - 3306:3306
+    volumes:
+      - ./mysql-var:/var/lib/mysql
+      - ../../mysql/conf.d/conf.cnf:/etc/mysql/conf.d/conf.cnf
+      - ../../mysql/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    networks:
+      default:
+        aliases:
+          - mysql-db-host
+
+#  nginx:
+#    image: nginx:1.12-alpine
+#    deploy:
+#      mode: global
+#    ports:
+#      - 80:80
+#    volumes:
+#      - ./nginx/conf.d:/etc/nginx/conf.d
+

@@ -1,0 +1,9 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+    <script src="${fn:escapeXml(myPage.baseUrl)}js/jquery-3.2.1.min.js"></script>
+    <script src="${fn:escapeXml(myPage.baseUrl)}js/bootstrap-3.3.7.min.js"></script>
+    <script src="${fn:escapeXml(myPage.baseUrl)}js/xregexp-all.min.js"></script>
+    <script src="${fn:escapeXml(myPage.baseUrl)}js/lolpapers${myPage.assetsVer}.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+/lolpapers-core/target/
+/lolpapers-core/nbactions.xml
+/lolpapers-core/nbproject/
+/lolpapers-web/target/
+/lolpapers-web/nbactions.xml
+/lolpapers-web/nbproject/
+/lolpapers-cli/target/
+/lolpapers-cli/nbactions.xml
+/lolpapers-cli/dependency-reduced-pom.xml
+/lolpapers-ci/target/
+/lolpapers-ci/nbactions.xml
+/lolpapers-ci/webdriver-var/
+/docker/images/lolpapers-tomcat/lolpapers.war
+/docker/images/lolpapers-tomcat/stuff/lolpapers-cli.jar
+/docker/stacks/persistent/mysql-var/
+/docker/stacks/persistent/tomcat-var/

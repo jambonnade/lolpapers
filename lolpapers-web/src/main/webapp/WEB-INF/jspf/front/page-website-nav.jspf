@@ -1,0 +1,89 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:set var="website" value="${myPage.website}" />
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only"><fmt:message key="nav.mobileToggleNav" /></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="${fn:escapeXml(myPage.websiteHomeUrl)}" title="${fn:escapeXml(website.name)}">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        ${fn:escapeXml(website.name)} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${fn:escapeXml(myPage.websiteHomeUrl)}">
+                                ${fn:escapeXml(website.pageName)}</a></li>
+                        <c:forEach var="cat" items="${myPage.website.categories}">
+                        <li><a href="${myPage.baseUrl}${cat.requestPath}">
+                                ${fn:escapeXml(cat.title)}</a></li>
+                        </c:forEach>
+                    </ul>
+                </li>
+                
+                <c:choose>
+                <c:when test="${myPage.user.existing}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <fmt:message key="nav.account" /> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${fn:escapeXml(myPage.userProfilerUrl)}">
+                                <fmt:message key="nav.account.profile" /></a></li>
+                        <li class="disconnect-menu"><a href="${fn:escapeXml(myPage.userDisconnectUrl)}">
+                                <fmt:message key="nav.account.disconnect" /></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <fmt:message key="nav.create" /> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header"><fmt:message key="nav.create.article" /></li>
+                        <li><a href="${fn:escapeXml(myPage.newArticleTemplateUrl)}">
+                                <fmt:message key="nav.create.article.new" /></a></li>
+                        <c:forEach var="t" items="${myPage.userArticleTemplates}">
+                        <li><a href="${fn:escapeXml(myPage.getEditArticleTemplateUrl(t))}">
+                                ${fn:escapeXml(myPage.getShortText(t.articleTitleText, 30))}</a></li>
+                        </c:forEach>
+                    </ul>
+                </li>
+                <li>
+                    <a href="${fn:escapeXml(myPage.fillReplacementUrl)}">
+                        <fmt:message key="nav.replace" />
+                        <c:if test="${myPage.userNbPlaceholdersToFill > 0}">
+                        <span class="badge">${myPage.userNbPlaceholdersToFill}</span>
+                        </c:if>
+                    </a>
+                </li>
+                </c:when>
+                <c:otherwise>
+                <li><a href="${fn:escapeXml(myPage.userConnectUrl)}">
+                        <fmt:message key="nav.login" /></a></li>
+                </c:otherwise>
+                </c:choose>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <fmt:message key="nav.help" /> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${fn:escapeXml(myPage.helpAboutUrl)}">
+                                <fmt:message key="nav.help.about" /></a></li>
+                        <li><a href="${fn:escapeXml(myPage.helpUrl)}">
+                                <fmt:message key="nav.help.help" /></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,30 @@
+version: "3"
+services:
+  tomcat:
+    image: jambonnade/lolpapers-tomcat
+    deploy:
+      mode: global
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app-var.tar:/usr/local/lolpapers/app-var.tar
+      - ./init-var.sh:/usr/local/lolpapers/init/init-var.sh
+
+  mysql:
+    image: mysql:5.7
+    deploy:
+      mode: global
+#    ports:
+#      - 3306:3306
+    volumes:
+      - ../../mysql/conf.d/conf.cnf:/etc/mysql/conf.d/conf.cnf
+      - ../../mysql/initdb.d/01-adduser.sql:/docker-entrypoint-initdb.d/01-adduser.sql
+      - ./00-create.sql:/docker-entrypoint-initdb.d/00-create.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    networks:
+      default:
+        aliases:
+          - mysql-db-host
+
+

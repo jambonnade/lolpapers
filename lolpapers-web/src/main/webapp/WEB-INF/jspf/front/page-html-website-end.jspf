@@ -1,0 +1,14 @@
+
+        <c:if test="${myPage.devMode}">
+        <form action="${myPage.baseUrl}dev/userConnect" method="post">
+            Id/name <input name="id"> <input type="submit">
+        </form>
+        </c:if>
+                    <%--
+
+        <p>${myPage.requestContext.userSession.userId}</p>
+        <p>${myPage.curPageUrl}</p>
+        <p>${myPage.requestContext.userSession.urlAfterLogin}</p>
+        --%>
+    </div>
+    <%@ include file="page-html-end.jspf" %>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings 
+    xmlns="http://java.sun.com/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+    version="2.0">
+
+    <!--
+        MySQL specific entity attributes
+    -->
+    
+    <package>de.jambonna.lolpapers.core.model</package>
+    
+    <entity class="WebsiteEntity">
+        <attributes>
+            <id name="websiteId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    <entity class="Category">
+        <attributes>
+            <id name="categoryId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    <entity class="Url">
+        <attributes>
+            <id name="urlId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    <entity class="User">
+        <attributes>
+            <id name="userId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    <entity class="NewsFeed">
+        <attributes>
+            <id name="newsFeedId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    <entity class="NewsFeedItem">
+        <attributes>
+            <id name="newsFeedItemId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    
+    <entity class="BaseContent">
+        <attributes>
+            <id name="baseContentId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+        <inheritance strategy="SINGLE_TABLE" />
+        <discriminator-column name="dtype" />
+    </entity>
+    <entity class="BaseArticle">
+        <discriminator-value>article</discriminator-value>
+    </entity>
+    
+    <entity class="ContentTemplate">
+        <attributes>
+            <id name="contentTemplateId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+        <inheritance strategy="SINGLE_TABLE" />
+        <discriminator-column name="dtype" />
+    </entity>
+    <entity class="ArticleTemplate">
+        <discriminator-value>article</discriminator-value>
+    </entity>
+    
+    <entity class="TemplatePlaceholder">
+        <attributes>
+            <id name="templatePlaceholderId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+    
+    <entity class="FinalContent">
+        <attributes>
+            <id name="finalContentId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+        <inheritance strategy="SINGLE_TABLE" />
+        <discriminator-column name="dtype" />
+    </entity>
+    <entity class="FinalArticle">
+        <discriminator-value>article</discriminator-value>
+    </entity>
+    
+    <entity class="FinalContentParticipant">
+        <attributes>
+            <id name="finalContentParticipantId">
+                <generated-value strategy="IDENTITY" />
+            </id>
+        </attributes>
+    </entity>
+</entity-mappings>

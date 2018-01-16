@@ -1,0 +1,440 @@
+/* Main CSS
+ */
+ 
+.has-touch .btn-default:hover {
+    background: inherit;
+}
+
+.not-touch .touch-only {
+    display: none;
+}
+
+
+.container.main {
+    margin-top: 80px;
+}
+
+.container.main.overlay-opened {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    filter: blur(3px);
+}
+.main-overlay {
+    visibility: hidden;
+    background: rgba(128, 128, 128, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000 /* over navbar */;
+}
+.main-overlay.opened {
+    visibility: visible;
+}
+
+.main-overlay .loader {
+    position: relative;
+    top: 45%;
+    left: 0;
+    text-align: center;
+}
+
+.main-overlay .loader {
+    font-size: 28px;
+    font-style: italic;
+}
+
+/* LOADER by @tobiasahlin */
+.spinner {
+    margin: 0 auto;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #333;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 40% { 
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+/* /LOADER */
+
+/* COMMON S. DEFINITION */
+
+.placeholder-sdef .attr-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 14px 0 4px;
+}
+
+.placeholder-sdef .attr-title .attr-help-btn {
+    font-size: 75%;
+    font-weight: normal;
+    line-height: 1;
+    color: #7a8288;
+}
+.placeholder-sdef .attr-title .attr-help-btn:hover,
+.placeholder-sdef .attr-title .attr-help-btn:active {
+    text-decoration: none;
+}
+
+.placeholder-sdef .list-group .sdef-flag .list-group-item-heading {
+    font-size: 18px;
+}
+
+.placeholder-sdef .list-group .sdef-flag .glyphicon-ok {
+    visibility: hidden;
+}
+.placeholder-sdef .list-group .sdef-flag.active .glyphicon-ok {
+    visibility: visible;
+}
+
+/* -- COMMON S. DEFINITION */
+
+/* COMMON LANGUAGE SPECIFIC STUFF */
+.language-fr .colored-st.st-n {
+    background: #ef491e;
+}
+.language-fr .colored-st.st-sn {
+    background: #d18c00;
+}
+.language-fr .colored-st.st-v {
+    background: #c936b0;
+}
+.language-fr .colored-st.st-sv {
+    background: #6b22a8;
+}
+.language-fr .colored-st.st-cc {
+    background: #22a832;
+}
+
+/* -- COMMON LANGUAGE SPECIFIC STUFF */
+
+
+/* TEMPLATE EDIT */
+.article-template-tuto .tuto-head {
+}
+.article-template-tuto .tuto-title {
+    font-size: 18px;
+    font-style: italic;
+}
+.article-template-tuto .tuto-head-actions {
+    float: right;
+    font-size: 14px;
+}
+.article-template-tuto .tuto-close {
+    margin-left: 15px;
+}
+.article-template-tuto .tuto-col {
+    font-size: 14px;
+}
+.article-template-tuto .tuto-col .tuto-item-num {
+    font-size: 26px;
+    line-height: 14px;
+}
+.article-template-tuto .tuto-col .tuto-img {
+    text-align: center;
+}
+.article-template-tuto .tuto-col .tuto-img img {
+    border: 2px solid #aaa;
+}
+
+
+.template-edit .container.main {
+    position: relative;
+}
+
+.template-edit .navbar-nav > li.erase-mode-menu > a:focus {
+    background-color: inherit;
+}
+.template-edit .navbar-nav > li.erase-mode-menu.active > a:focus {
+    background-color: #5d6368;
+}
+
+.template-edit.select-mode .template-edit-part a {
+    cursor: pointer;
+}
+.template-edit .template-edit-part a.selected {
+    color: #dfff00;
+}
+
+.template-edit.erase-mode .template-edit-part {
+    cursor: pointer;
+}
+.template-edit.erase-mode .template-edit-part a:hover {
+    text-decoration: none;
+}
+
+.template-edit .template-edit-part .hover[data-blkid] {
+    color: #222;
+    background: #ffbcf7;
+}
+.template-edit .template-edit-part .hover[data-blkid] a {
+    color: inherit;
+}
+
+.template-edit .template-edit-part .removed[data-blkid] {
+    text-decoration: line-through;
+}
+
+.template-edit .placeholder {
+    padding: 2px 2px 1px 4px;
+    margin: 0 4px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.template-edit.select-mode .placeholder {
+    cursor: pointer;
+}
+.template-edit .placeholder.current {
+    border: 2px solid white;
+}
+
+
+
+.template-edit .placeholder .placeholder-flags {
+    font-size: 75%;
+}
+
+.template-edit .selection-popover {
+    max-width: 500px;
+}
+
+.template-edit .selection-popover .select-type-msg {
+    font-weight: bold;
+}
+
+.template-edit .selection-popover .select-type-msg .st-help-toggle {
+    font-size: 75%;
+    font-weight: normal;
+    line-height: 1;
+    color: #7a8288;
+}
+
+
+.template-edit .template-edit-placeholder .context-sections {
+    margin-bottom: 15px;
+}
+
+.template-edit .template-edit-placeholder .section-title {
+    margin-top: 0;
+}
+
+.template-edit .template-edit-placeholder .section-title .help-link {
+    font-size: 75%;
+    font-weight: normal;
+    line-height: 1;
+    color: #7a8288;
+}
+
+.template-edit .template-edit-placeholder .article-view {
+    height: 250px;
+    overflow: auto;
+}
+
+.template-edit .template-edit-placeholder .article-view .descr-container {
+    margin-bottom: 10px;
+}
+.template-edit .template-edit-placeholder .article-view a {
+    cursor: default;
+}
+.template-edit .template-edit-placeholder .article-view a:hover {
+    text-decoration: none;
+}
+
+.template-edit .template-edit-placeholder .attr-help {
+    margin-bottom: 5px;
+}
+
+.template-edit .template-edit-placeholder .modal-footer .required-note {
+    font-style: italic;
+    margin-right: 50px;
+}
+
+
+.template-edit .footer-spacer {
+    height: 450px;
+}
+
+/*
+.template-edit-st-choice {
+    position: absolute;
+    border: 2px solid #aaa;
+    background: #333;
+    visibility: hidden;
+}
+.template-edit-st-choice.opened {
+    visibility: visible;
+}
+
+.template-edit-st-choice .st-choice.disabled {
+    text-decoration: line-through;
+}
+*/
+
+/*.template-edit-placeholder {
+    position: absolute;
+    border: 2px solid #aaa;
+    background: #333;
+    visibility: hidden;
+
+}
+.template-edit-placeholder.opened {
+    visibility: visible;
+}
+.template-edit-placeholder .sdef {
+    
+}*/
+
+/* -- TEMPLATE EDIT */
+
+/* FILL REPLACEMENT */
+
+.fill-replacement-form .fill-text-part {
+    margin: 50px 0 20px;
+}
+.fill-replacement-form .fill-text-msg {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.fill-replacement-form .fill-text-details {
+    margin-bottom: 24px;
+}
+
+.fill-replacement-form .fill-text-details .details-title {
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.fill-replacement-form .fill-text-msg em.st, 
+.fill-replacement-form .fill-text-details em.flag,
+.fill-replacement-form .fill-text-details em.attr {
+    font-style: normal;
+    color: #eee;
+}
+
+.fill-replacement-form .fill-text-msg em.st.colored-st {
+    padding: 0 4px 2px 4px;
+    border-radius: 3px;
+    color: white;
+    /*font-weight: bold;*/
+}
+
+.fill-replacement-form .fill-text-msg em.st.with-help, 
+.fill-replacement-form .fill-text-details em.flag.with-help,
+.fill-replacement-form .fill-text-details em.attr.with-help {
+    /*border-bottom: 1px solid #eee;*/
+    cursor: help;
+    text-decoration: underline;
+    /*text-decoration-style: dotted;*/
+}
+
+/*.fill-replacement-form  {
+    margin-bottom: 10px;
+}*/
+.fill-replacement-form .ctx-samples-title {
+    font-size: 20px;
+}
+
+.fill-replacement-form .sdef-msg {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+
+/*.fill-replacement-form .btns-part {
+    margin-top: 30px;
+}*/
+
+
+/* -- FILL REPLACEMENT */
+
+/* ARTICLE LIST */
+.article-list img {
+    margin: 0 10px 10px 0;
+}
+.article-list .descr-text {
+    font-size: 120%;
+}
+.article-list .infos-line {
+    /*border-top: 1px solid #aaa;*/
+}
+
+/* -- ARTICLE LIST */
+
+/* FINAL ARTICLE */
+.final-article .article-infos {
+    margin-top: 20px;
+    border-top: 1px solid #1c1e22;
+    padding-top: 5px;
+}
+/* -- FINAL ARTICLE */
+
+/* HELP PAGES */
+.help-title {
+    position: relative;
+}
+.help-title a {
+    color: inherit;
+}
+.help-title a:active,
+.help-title a:hover {
+    text-decoration: none;
+}
+.help-title a .glyphicon {
+    position: absolute;
+    left: -1.2em;
+    visibility: hidden;
+}
+.help-title a:hover .glyphicon {
+    visibility: visible;
+}
+
+.help-title .help-anchor {
+    position: absolute;
+    display: block;
+    left: -2em;
+    top: -80px;
+}
+
+h4.help-title {
+    margin: 32px 0 6px;
+}
+
+/* -- HELP PAGES */
