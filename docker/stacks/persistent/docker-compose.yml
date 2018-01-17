@@ -12,7 +12,7 @@ services:
 #    environment:
 #      # When using the reverse proxy (note : need to add this domain to /etc/hosts)
 #      LOLPAPERS_BASE_URL: "http://lolpapers.local.jambonna.de/"
-#      LOLPAPERS_BASE_PATH: /
+#      LOLPAPERS_BASE_URL_PATH: /
 
   mysql:
     image: mysql:5.7
@@ -39,4 +39,4 @@ services:
 #      - 80:80
 #    volumes:
 #      - ./nginx/conf.d:/etc/nginx/conf.d
-
+#
