@@ -72,9 +72,10 @@ In case you don't want to use the existing image `jambonnade/lolpapers-tomcat`, 
 Integration tests are in `lolpapers-ci` project. As an example, a single test has been written : a user scenario showing the main features and important cases. This scenario needs to be run from the *state01* state. Some configuration has to be passed via system properties.
 
 * install [PhantomJS](http://phantomjs.org/) somewhere on your system
-* run the *ephemeral-state01* stack
-* run the tests in lolpapers-ci project (change phantomJS path) :
+* start the *ephemeral-state01* stack
 
+
+Then run the tests in lolpapers-ci project (change phantomJS path) :
 
 	cd lolpapers-ci
 	mvn -Dde.jambonna.lolpapers.ci.phantomJSPath=/path/to/phantomjs/bin/phantomjs -Dde.jambonna.lolpapers.ci.devKey=chips -Dde.jambonna.lolpapers.ci.baseUrl=http://127.0.0.1:8080/lolpapers/ test
